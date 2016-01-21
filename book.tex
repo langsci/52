@@ -1,0 +1,58 @@
+\documentclass[output=short   % long|short|inprep              
+			   %,blackandwhite
+			   %,smallfont
+			   %,draftmode   
+			   ,biblatex
+			  ]{LSP/langsci}
+
+\usepackage{localmetadata}
+\usepackage{localpackages}
+\usepackage{localcommands}			                   
+\usepackage{localhyphenation}
+\bibliography{references} % References file 
+\begin{document} 
+
+\maketitle  
+
+\frontmatter
+\include{preface/preface}
+\tableofcontents    
+\mainmatter
+\include{chap-introduction/chap-introduction}
+\include{Chapter2/chapter2}
+\include{Chapter3/chapter3}
+\include{Chapter4/chapter4}
+\include{Chapter5/chapter5}
+%\ohead{Postscriptum}
+\include{Conclusion/conclusion}
+
+\appendix
+%\ohead{Appendix: Measures}
+\include{Appendices/measures}
+
+% ####################################################################
+\backmatter
+\phantomsection%this allows hyperlink in ToC to work
+% \addcontentsline{toc}{chapter}{List of references}
+\printbibliography %change to the name of your bib file
+\clearpage
+   
+ % \printauthorindex
+\ohead{Index}
+\phantomsection%this allows hyperlink in ToC to work
+\addcontentsline{toc}{chapter}{Indexes}
+\addcontentsline{toc}{section}{Name index}
+\ohead{Name index} 
+\printindex
+
+% 
+% \phantomsection%this allows hyperlink in ToC to work
+% \addcontentsline{toc}{section}{Language index}
+% \ohead{Language index} 
+% \printindex[lan] 
+  
+\phantomsection%this allows hyperlink in ToC to work
+\addcontentsline{toc}{section}{Subject index}
+\ohead{Subject index} 
+\printindex[sbj] 
+\end{document}
