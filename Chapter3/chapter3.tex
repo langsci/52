@@ -1,7 +1,7 @@
 % ####################################################################
 
 \setcounter{chapter}{2}
-\chapter{Baseline Experiments}
+\chapter{Baseline experiments}
 \label{c:base}
 
 The grammatical square\is{grammatical square} (see Figure \ref{f:stage4}) illustrates the multifunctional and indirect nature of case marking\is{case!case marking}. It can also be read as a `research roadmap' for experiments on the emergence\is{formation} of a grammar for case. More specifically, the experiments must investigate how a population\is{speech population} of agents can evolve a grammar which takes care of (1) the mapping between event-specific participant role\is{participant role}s and generalized semantic role\is{semantic role}s, (2) the mapping between semantic role\is{semantic role}s and grammatical cases, and (3) the mapping between cases and surface case marker\is{case!case marking}s. Constructing and aligning this kind of grammar in a multi-agent population\is{speech population} is incredibly difficult because all mappings are agent-internal and are thus not directly observable by other agents. Moreover, these mappings vary depending on the communicative and linguistic context so the agents have to be capable of dealing with polysemy\is{polysemy}. Finally, linguistic convention\is{convention}s may constantly change so the agents have to be able to adapt to newly propagat\is{propagation}ed constructions.
@@ -170,7 +170,9 @@ Suppose that the speaker profiles the move-inside-event such that only the house
 \end{lstlisting}
 \z
 
-\subsection{Additional assumption\is{assumption}s and scaffold\is{scaffold}s}
+\subsection{Additional assumptions and scaffolds}
+\is{assumption}
+\is{scaffold}
 \label{s:assumptions}
 
 The agents in these simulations are endowed with strong (cognitive) capacities that enable them to communicate linguistically with each other. Listing all aspects of language that are assumed, scaffold\is{scaffold}ed or ignored would take too much space, so I will restrict myself to the most important ones:
@@ -438,7 +440,8 @@ Note that the hearer does not know from this meaning which participant played wh
 Since unification successfully returns a single hypothesis, the hearer can now infer that the variables `?object-x' and `?object-a' are equal\is{variable equality} because they both refer to the same object (`object-1'). The hearer also infers that the variables `?object-y' and `?object-b' are equal\is{variable equality} because they both refer to `object-2'. The hearer thus successfully infers that the puppet Jack played the participant role\is{participant role} `walk-to-1' and that the puppet Jill played the participant role\is{participant role} `walk-to-2'.
 
 
-\subsubsection{Communicative success\is{communicative success}}
+\subsubsection{Communicative success}
+\is{communicative success}
  In the above example, the parsed meaning is unambiguously compatible with the hearer's world model so the hearer signals agreement to the speaker. This means that the language game\is{language game} was successful. The game fails if the parsed meaning would not match the hearer's world model or if the hearer still has multiple hypotheses left after interpretation (for example when the context consists of several similar events). In this case the hearer would signal disagreement.
 
 In this first baseline experiment, success in the game does not influence the linguistic behaviour of the agents since the lexicon\is{lexicon} is given and assumed to be fixed. The point here is rather to demonstrate that the agents can reach success in communication even though they have no grammar yet.
@@ -470,7 +473,8 @@ Improving communicative success\is{communicative success} in the failed games co
 
 Baseline experiment 1 showed how agents can still reach communicative success\is{communicative success} without using grammar. In the second baseline experiment, agents can exploit this ability to autonomously detect whether it might be useful to make changes to their linguistic inventor\is{linguistic inventory}ies in order to optimize communication. The hypothesis investigated here can be formulated as follows: {\bfseries ambiguity\is{ambiguity} or too much cognitive effort\is{cognitive effort} during parsing and interpretation can be a trigger for the invention of functional marker\is{case!case marking}s for optimizing communicative success\is{communicative success}}.
 
-\subsection{Speaker-based innovat\is{innovation}ion}
+\subsection{Speaker-based innovation}
+\is{innovation}
 
 \begin{figure}[t]
 \centerline{\includegraphics[width=\linewidth]{Chapter3/figs/re-entrance}}
@@ -486,7 +490,8 @@ In baseline experiment 1 the hearer is faced with the cognitive load of figuring
 \item Endowing the agents with a consolidation\is{consolidation} mechanism which allows them to converge on a shared set of marker\is{case!case marking}s.  
 \end{enumerate}
 
-\subsubsection{Re-entrance\is{re-entrance}}
+\subsubsection{Re-entrance}
+\is{re-entrance}
  In baseline experiment 1, the agents could confidently use their lexical items to communicate with each other since the lexicon\is{lexicon} in this model is fixed, unambiguous, and shared by all the agents. However, should this scaffold\is{scaffold} be taken away, the agents would have to worry about whether the words they use are also known and understood by the other agents. They would thus somehow have to be capable of predicting the parsing and interpretation behaviour of the hearer in order to increase the chances of reaching communicative success\is{communicative success}. This can be achieved through `re-entrance\is{re-entrance}' 
 \citep{steels03language} -- also called the `obverter' strategy by \citet{smith03intelligent}.
 
@@ -720,7 +725,8 @@ As can be seen in the set of bindings, there are no unexpressed variable equal\i
 \end{enumerate}
 \end{enumerate}
 
-\subsubsection{Consolidation\is{consolidation}}
+\subsubsection{Consolidation}
+\is{consolidation}
  In the original two-agent simulations variety never occurs since the agents only observe each other's inventions except for the extremely rare cases in which the learning task was too difficult and the learner later on invents a different solution for the same problem. So consolidation\is{consolidation} is fairly trivial and means just storing the newly created or learned items in the linguistic inventor\is{linguistic inventory}y.
 
 However, as soon as we scale up the experiments to multi-agent population\is{speech population}s involving at least three agents, a pool of synchron\is{synchronic}ic variation\is{variation} naturally arises since the agents can independently come up with different innovat\is{innovation}ions for the same problems. The agents therefore need to have an alignment strateg\is{alignment strategy}y that enables them to deal with the variety and to converge on a shared set of preferred marker\is{case!case marking}s.
@@ -795,7 +801,8 @@ However, a price has to be paid for reducing the effort of interpretation and th
 Coupling these results back to natural languages, there are thus two clear qualitative differences: (a) marker\is{case!case marking}s in natural languages {\em do} generalize and become polysemous; and (b) they are not randomly invented but recruited from existing lexical items (see sections \ref{s:stage2} and \ref{s:stage3}). Both issues will have to be addressed in other experiments.
 
 
-\section{Baseline experiment 3: semantic role\is{semantic role}s}
+\section{Baseline experiment 3: semantic roles}
+\is{semantic role}
 \label{s:base3}
 
 The results of baseline experiment 2 indicate that the agents can reduce the problem of ambiguity\is{ambiguity} and cognitive effort\is{cognitive effort} if they make use of additional marking. However, the proposed innovat\is{innovation}ion strategy requires new marker\is{case!case marking}s to be invented all the time so (a) there is no generalization beyond the known data, and (b) this may lead to an explosion of the inventory size in the long run. Baseline 3 investigates how the same principles of diagnosis and repair\is{learning strategies!repair strategies} in order to reach communicative success\is{communicative success} can lead to generalization. The hypothesis is that {\bfseries analog\is{analogy}ical reasoning over event structure\is{event structure}s can account for an increased generalization and productivity\is{productivity} of case marker\is{case!case marking}s}.
@@ -957,7 +964,8 @@ The changes to the inventory are schematized in Figure \ref{f:generalise} and ca
 The agents in this experiment can thus be characterized as (incremental) instan-ce-based\is{exemplar-based models} learners (and innovat\is{innovation}ors) \citep[Chapter 8]{mitchell97machine}: the agents are `lazy' learner\is{lazy learner}s in the sense that they postpone generalization until new instances have to be classified as opposed to `eager' learner\is{eager learner}s that try to make abstraction\is{abstraction}s over the data immediately. Each innovat\is{innovation}ion or novel classification is not based on abstract rules but by examining its relation to previously stored instances.  This kind of learning (and innovat\is{innovation}ion) fits usage-based model\is{usage-based model}s of language which presuppose {\em ``a bottom-up, maximalist, redundant approach in which patterns (schemas, generalizations) and instantiations are supposed to coexist, and the former are acquired from the latter''} \citep[20]{daelemans05memory}.
 
 
-\subsubsection{Consolidation\is{consolidation}}
+\subsubsection{Consolidation}
+\is{consolidation}
  The original two-agent simulations did not need to care about alignment strateg\is{alignment strategy}ies or consolidation\is{consolidation} too much since the two agents always share the same communicative history. So the replicating experiment should pose no problems in both the alignment of case marker\is{case!case marking}s and the alignment of the internal structure of semantic role\is{semantic role}s. The same prediction cannot be made for multi-agent simulations in which alignment strateg\is{alignment strategy}ies are needed for convergence. Three additional set-ups have therefore been implemented: one which uses the same mechanism for updating the confidence\is{confidence} scores of linguistic items as in baseline experiment 2 (set-up 3b), one in which a more fine-grained scoring mechanism has been implemented (set-up 3c), and finally one in which (token) frequency\is{frequency} decides on the speaker's behaviour (set-up 3d). In this section I will not go into the reasons for experimenting with these different set-ups: they have been inspired by the experimental results and are therefore discussed later on. Instead, I will restrict myself to explaining the two new consolidation\is{consolidation} strategies. The four different set-ups (and their effects on the results) are summarized in Table \ref{t:consolidation-comparison}.
 
 
@@ -1289,7 +1297,8 @@ In the simulations, analog\is{analogy}y is the source of generalization and incr
 \end{table}
 
 
-\subsubsection{Analog\is{analogy}y all the way}
+\subsubsection{Analogy all the way}
+\is{analogy}
  Evidence from natural languages suggests that analog\is{analogy}y is also responsible for the first innovat\is{innovation}ion by recruiting an existing lexical entr\is{lexical entry}y for a more grammatical use instead of inventing a new marker\is{case!case marking} (see section \ref{s:stage2}). Additional experiments are thus needed in which the innovat\is{innovation}ion strategies of baseline experiments 2 and 3 are combined into one. The recruitment of existing and well-entrench\is{entrenchment}ed lexical entr\is{lexical entry}ies would naturally follow from the same assumption\is{assumption}s that language is an inferential coding system\is{inferential coding system} and that speakers and hearers will exploit whatever resources that are available for solving communicative problems: using a convention\is{convention}alized linguistic unit has the major advantage that it offers the hearer a strong grounding point for inferring the meaning or function of the innovat\is{innovation}ion. In the present experiments, the new marker\is{case!case marking}s do not contain any clues about what their source events were, so this may differ strongly from agent to agent which explains why the hearer can't retrieve the analog\is{analogy}y in all cases. In the abstraction\is{abstraction}s and scaffold\is{scaffold}s of the present set-up, however, this poses no problems.
 
 Implementing a more realistic model of stage 2 in the development of case marker\is{case!case marking}s, however, is not a trivial matter and requires more study on how this happens in natural languages. From the evidence gathered so far (see section \ref{s:stage2}), it seems that the present algorithm for analog\is{analogy}y cannot handle this. The first reason is that the recruited lexical item in serial verb language\is{serial verb}\is{verb} constructions, which are typical sources of case marker\is{case!case marking}s, seems to `fit' naturally in the utterance by for example presupposing the same subject\is{syntactic role!subject} as was demonstrated in example \ref{e:thai} which I repeat here: 

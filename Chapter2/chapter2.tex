@@ -1,6 +1,6 @@
 
 \setcounter{chapter}{1}
-\chapter{Processing Case and Argument Structure}
+\chapter{Processing case and argument structure}
 \label{c:ar}
 
 The mathematical properties of case and argument structure have been extensively studied in the tradition of formal grammars such as Combinatorial Categorial Grammar \citep[CCG;][]{steedman00syntactic}, Lexical-Functional Grammar \citep[LFG;][]{bresnan82mental} and Head-driven Phrase Structure Grammar \citep[HPSG;][]{sag94hpsg}. The focus of those studies has been the development of {\em competence models} (i.e. knowledge representations), thereby treating {\em linguistic processing} as a problem that can be dealt with separately. However, if our artificial agents have to use their linguistic knowledge in communicative interactions, we need a strong integration of both processing and competence.
@@ -366,7 +366,8 @@ Unifying and merging the lexical entr\is{lexical entry}ies for {\em sweep}, {\em
 
 The meanings in the above coupled feature structure\is{feature structure!coupled feature structure} are however still unlinked (see section \ref{s:linking}). In other words, the hearer knows at this stage the meaning of the individual words, but not who is doing what in the sweep-event: the variables that accompany the meaning of {\em sweep} (`?obj-x', `?obj-y' and `?obj-z') are not shared by any of the arguments (`?object-1', `?object-2' and `?object-3'). We therefore need to unify\is{unify and merge} and merge the correct construction that is able to handle the unresolved variable equalities.
 
-\subsection{A syntactic case marker\is{case!case marking}}
+\subsection{A syntactic case marker}
+\is{case!case marking}
 \label{s:morph-rule}
 
 Before that construction is applied, there is still the string ``off-'' in the top-unit that needs to be parsed. In this example I analyze {\em off-} as some kind of simple case marker\is{case!case marking} that assigns the oblique\is{syntactic role!oblique} case to the argument that immediately follows it. By treating {\em off-} as a case marker\is{case!case marking} I can immediately illustrate how marker\is{case!case marking}s are represented in the experiments as well.
@@ -403,7 +404,9 @@ The morphological rule itself looks as follows:
 \z
 
 
-\subsection{The cause\is{causality}d motion construction\is{construction!caused motion construction}}
+\subsection{The caused motion construction}
+\is{causality}
+\is{construction!caused motion construction}
 
 The utterance {\em Jack sweeps the dust off the floor} is a typical example of the cause\is{causality}d motion construction\is{construction!caused motion construction} \citep[chapter 7]{goldberg95construction}, which here carries the meaning of `X cause\is{causality}s Y to move Z by sweeping'. In the semantic pole, the construction selects from the verb\is{verb} the semantic role\is{semantic role}s of agent\is{semantic role!agent}, moveable patient\is{semantic role!patient} and source\is{semantic role!source}. On the syntactic pole it assigns the syntactic role\is{syntactic role}s of subject\is{syntactic role!subject}, object\is{syntactic role!object} and oblique\is{syntactic role!oblique} to the arguments. The construction looks as follows:
 
@@ -543,7 +546,8 @@ In order to verb\is{verb}alize this meaning, the speaker constructs a reaction n
 
 \end{lstlisting}
 \z
-\subsection{Unifying and merging lexical entr\is{lexical entry}ies}
+\subsection{Unifying and merging lexical entries}
+\is{lexical entry}
 
 Next, the speaker builds new nodes in the network by unify\is{unify and merge}ing and merging the lexical entr\is{lexical entry}ies that cover these meanings. Suppose that the speaker has the same lexical entr\is{lexical entry}ies as given in the previous section and that all three of them ({\em jack, sweep} and {\em floor)} are a successful match, then the new coupled feature structure\is{feature structure!coupled feature structure} looks as follows:
 
