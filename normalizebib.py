@@ -331,7 +331,7 @@ if __name__ == "__main__":
 
   inbib = open(sys.argv[1])
   outbib = open('sorted.bib','w')
-  texs = glob.glob('Chapter*/*tex')
+  texs = glob.glob('*/*tex')
   CITE = re.compile(r'\cite[yeargenltp]*(?:\[.*?\])?\{(.*?)\}')
   #                                         pages     key  
   #accumulate the keys of cited works per tex-file
