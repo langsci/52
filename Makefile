@@ -9,7 +9,7 @@ all: pod cover
 
 complete: index main.pdf
 
-index:  main.snd
+index:  main.and
  
 main.pdf: main.aux
 	xelatex main 
@@ -23,7 +23,7 @@ main.bbl:  $(SOURCE) localbibliography.bib
 	bibtex -min-crossrefs=200 main 
 
 
-main.snd: main.bbl
+main.and: main.bbl
 	sed -i s/.*\\emph.*// main.adx #remove titles which biblatex puts into the name index
 	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.sdx # ordering of references to footnotes
 	sed -i 's/hyperindexformat{\\\(infn {[0-9]*\)}/\1/' main.adx

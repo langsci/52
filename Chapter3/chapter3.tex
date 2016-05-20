@@ -47,14 +47,21 @@ The baseline experiments reported in this Chapter first of all replicate the two
 \item In baseline experiment 3 (corresponding to stage 3 -- \sectref{s:stage3}), agents are endowed with the capacity to perform analog\is{analogy}ical reasoning over event structure\is{event structure}s. They can exploit this capacity for generalizing existing marker\is{case!case marking}s to cover new participant role\is{participant role}s. As I will show later, generalization is not a goal in itself but rather a side-effect of the need for optimizing communication.
 \end{enumerate}
 
+\newpage
 These key cognitive abilities will be explained in more detailed along with the experiments further down in this Chapter. The abilities are each time given and fixed by the experimenter and the simulations do not explain where they come from. However, the global vision underlying this work is that speakers and hearers can autonomously configure their language capacity by recruiting cognitive mechanisms that are also used for other tasks such as hierarchy\is{hierarchy} building operators \citep{steels07recruitment}. This process is driven by needs in communicative success\is{communicative success}, expressive power and the convention\is{convention}s adopted by other agents in the population\is{speech population}. Here again, agents have to be capable of self-assess\is{self-assessment}ing when to recruit a mechanism, which ones are the best candidates, and to self-regulate the semantic complexity of their communication. For simulations that investigate self-regulation and reconfiguration of the language faculty\is{language faculty} on the longer run, see \citet{steels06how-grammar, steels07scaffolding}. In the remainder of this section, I will describe those aspects of the simulations which are shared by all the experiments.
 
 \subsection{Description games}
 
-\begin{figure}[t]
+\begin{figure}[p]
 \centerline{\includegraphics[width=0.8\linewidth]{Chapter3/figs/cycle}}
   \caption[The semiotic cycle]{The semiotic cycle\is{semiotic cycle} involved in language game\is{language game}s. There are three systems working in tight interaction with each other: the sensory-motor system\is{sensory-motor system} (perception and modeling), the conceptual/intentional system\is{conceptual/intentional system} (conceptualization\is{conceptualization} and interpretation), and the linguistic system (production and parsing). This book mainly focuses on the latter one and is complementary to other research efforts on grounded language use and conceptualization\is{conceptualization}.}
    \label{f:cycle}
+\end{figure}
+
+\begin{figure}[p]
+\centerline{\includegraphics[width=0.5\linewidth]{Chapter3/figs/puppets}}
+  \caption[An example scene]{The world environment consists of dynamic scenes in which puppets perform various actions such as walking and pushing blocks to each other. Here, one puppet ``gives'' a block to another puppet by sliding it over a table. The scene contains four participants (two puppets, a block and a table), a ``ground'' and various micro- and macro-events.}
+   \label{f:puppets}
 \end{figure}
 
 An obvious requirement for developing a grammar for marking event structure\is{event structure} is {\bfseries communication about events}. This is operationalized in the form of the {\bfseries description game\is{language game!description game}}, a routinized communicative interaction which involves the complete semiotic cycle\is{semiotic cycle} as illustrated in \figref{f:cycle}. Applied to the simulations in this book, the interaction pattern conforms to the following script:
@@ -75,11 +82,7 @@ An obvious requirement for developing a grammar for marking event structure\is{e
 \subsection{The world, sensory-motor input and conceptualization}
 \label{s:world}
 
-\begin{figure}[t]
-\centerline{\includegraphics[width=0.65\linewidth]{Chapter3/figs/puppets}}
-  \caption[An example scene]{The world environment consists of dynamic scenes in which puppets perform various actions such as walking and pushing blocks to each other. Here, one puppet ``gives'' a block to another puppet by sliding it over a table. The scene contains four participants (two puppets, a block and a table), a ``ground'' and various micro- and macro-events.}
-   \label{f:puppets}
-\end{figure}
+
 
 The semiotic cycle\is{semiotic cycle} in \figref{f:cycle} clearly shows that linguistic processing is only one part of the general cognitive architecture which is involved in communication. Even though the experiments in this book mainly focus on the production and parsing of linguistic utterances, at least two other systems are directly relevant for communication: the sensory-motor system\is{sensory-motor system} (in a broad sense responsible for dealing with the sensory experience and for building a world model) and the conceptual-intentional system (responsible for conceptualization\is{conceptualization} and interpretation as well as concept\is{concept formation} formation\is{formation}). These three ``systems'' work together in tight interaction and without a clear-cut division between them.
 
@@ -114,6 +117,7 @@ As can be seen in example \ref{facts}, there are three objects in the scene (two
 
 The labels of these facts thus carry English\is{English} names, {\bfseries but should not be interpreted as such}. For example, `move-inside' actually involves a puppet moving behind another object. The vision system, which is based on colour\is{colour} recognition, does not have any notion of a container or some kind of `insideness'. Instead it sees one colour\is{colour} blob (the girl puppet) moving towards another one (the yellow `house') until the colour\is{colour} regions ``touch'' each other after which the girl puppet disappears out of sight. So the label `move-inside' does not reflect what actually happens in the scene (in terms of human conceptualization\is{conceptualization}) but it is used for facilitating the analysis of the event recognition\is{event recognition} by the experimenter.
 
+\largerpage
 From the above it should also be clear that the PERACT\is{PERACT system} system describes dynamic scenes in different levels of complexity. For example, the move-inside-event is itself a macro-event which can be decomposed into sub-events (which are macro-events themselves or micro-events, and which are also represented as facts in the memories of the agents). The micro-events for a move-inside-event are primitive relations such as `visible', `distance-decreasing', `movement', `touching' and `disappearing'. The PERACT\is{PERACT system} system offers a hierarchical description of events including time stamps for their beginnings and ends. As I will explain in \sectref{s:base3}, the simulations reported in this book disregard this temporal and hierarchical information and treat the event structure\is{event structure} of an event as a flat list of micro-events. This choice was made in order to focus on the participant role\is{participant role}s as a whole rather than on causal-\is{causality}aspect\is{aspect}ual parts of the event-structure. I will come back to this choice when discussing the experiments on Stage IV in the development of case markers.
 
 One final remark regarding the sensory-motor input has to do with the status of the visual `primitives'. I do not make any claims about whether they are innate or not, nor do I claim that they represent a realistic set for categorizing events in human cognition (neither in terms of size nor in terms of quality). The idea is rather that events can be decomposed into a much richer representation that allows analog\is{analogy}ical reasoning and the comparison of event structure\is{event structure}s.
@@ -251,50 +255,50 @@ Besides the words for event type\is{event type}s, the agents are given 11 unambi
 {\bfseries Event-types} & {\bfseries Participant role\is{participant role}s} & {\bfseries Truth} & {\bfseries Words}\\
 & & {\bfseries values} & \\
 \midrule
-borderscreen & object-1& false & ``disappear''\\[.3em]\multirow{2}{*}{move } & \multirow{2}{*}{ move-1}& true & ``move''
+borderscreen & object-1& false & `disappear'\\[.3em]\multirow{2}{*}{move } & \multirow{2}{*}{ move-1}& true & `move'
 \\
- & & false & ``rest''
-\\[.3em]\multirow{2}{*}{visible } & \multirow{2}{*}{ visible-1}& true & ``visible''
+ & & false & `rest'
+\\[.3em]\multirow{2}{*}{visible } & \multirow{2}{*}{ visible-1}& true & `visible'
 \\
-  & & false & ``invisible''
-\\[.3em]\multirow{2}{*}{approach } &  approach-1 & true & ``approach''
+  & & false & `invisible'
+\\[.3em]\multirow{2}{*}{approach } &  approach-1 & true & `approach'
 \\
-  & approach-2 & false & ``no-approach''
-\\[.3em]\multirow{2}{*}{distance-decreasing }  &  distance-decreasing-1  & true & ``get-closer''
+  & approach-2 & false & `no-approach'
+\\[.3em]\multirow{2}{*}{distance-decreasing }  &  distance-decreasing-1  & true & `get-closer'
 \\
-   & distance-decreasing-2 & false & ``separate''
-\\[.3em]\multirow{2}{*}{fall } &   fall-1  & \multirow{2}{*}{true} & \multirow{2}{*}{``fall''}
+   & distance-decreasing-2 & false & `separate'
+\\[.3em]\multirow{2}{*}{fall } &   fall-1  & \multirow{2}{*}{true} & \multirow{2}{*}{`fall'}
 \\
  & fall-2 & &
-\\[.3em]\multirow{2}{*}{grasp } &  grasp-1 & \multirow{2}{*}{true} & \multirow{2}{*}{``grasp''}
+\\[.3em]\multirow{2}{*}{grasp } &  grasp-1 & \multirow{2}{*}{true} & \multirow{2}{*}{`grasp'}
 \\
  & grasp-2 & &
-\\[.3em]\multirow{2}{*}{hide } &  hide-1  & \multirow{2}{*}{true} & \multirow{2}{*}{``hide''}
+\\[.3em]\multirow{2}{*}{hide } &  hide-1  & \multirow{2}{*}{true} & \multirow{2}{*}{`hide'}
 \\
  & hide-2 & &
-\\[.3em]\multirow{2}{*}{move-inside } &  move-inside-1 & \multirow{2}{*}{true} & \multirow{2}{*}{``move-inside''}
+\\[.3em]\multirow{2}{*}{move-inside } &  move-inside-1 & \multirow{2}{*}{true} & \multirow{2}{*}{`move-inside'}
 \\
  & move-inside-2 & &
-\\[.3em]\multirow{2}{*}{move-outside } &  move-outside-1 & \multirow{2}{*}{true} & \multirow{2}{*}{``move-outside''}
+\\[.3em]\multirow{2}{*}{move-outside } &  move-outside-1 & \multirow{2}{*}{true} & \multirow{2}{*}{`move-outside'}
 \\
   &  move-outside-2 & &
-\\[.3em]\multirow{2}{*}{touch } &   touch-1 & \multirow{2}{*}{true} & \multirow{2}{*}{``touch''}
+\\[.3em]\multirow{2}{*}{touch } &   touch-1 & \multirow{2}{*}{true} & \multirow{2}{*}{`touch'}
 \\
  &  touch-2 & &
-\\[.3em]\multirow{2}{*}{walk-to } &  walk-to-1 & \multirow{2}{*}{true} & \multirow{2}{*}{``walk-to''}
+\\[.3em]\multirow{2}{*}{walk-to } &  walk-to-1 & \multirow{2}{*}{true} & \multirow{2}{*}{`walk-to'}
 \\
  &  walk-to-2 & &
-\\[.3em]\multirow{3}{*}{cause-move-on } &  cause-move-on-1 & \multirow{3}{*}{true} & \multirow{3}{*}{``cause-move-on''}
+\\[.3em]\multirow{3}{*}{cause-move-on } &  cause-move-on-1 & \multirow{3}{*}{true} & \multirow{3}{*}{`cause-move-on'}
 \\
   &  cause-move-on-2  & &
 \\
   &  cause-move-on-3  & &
-\\[.3em]\multirow{3}{*}{   give } &  give-1 & \multirow{3}{*}{true} & \multirow{3}{*}{``give''}
+\\[.3em]\multirow{3}{*}{give } &  give-1 & \multirow{3}{*}{true} & \multirow{3}{*}{`give'}
 \\
  &   give-2 & &
 \\
   &  give-3  & &
-\\[.3em]\multirow{3}{*}{take } & take-1 & \multirow{3}{*}{true} & \multirow{3}{*}{``take''}
+\\[.3em]\multirow{3}{*}{take } & take-1 & \multirow{3}{*}{true} & \multirow{3}{*}{`take'}
 \\
   &   take-2  & &
 \\
@@ -466,6 +470,7 @@ The results indicate that the agents can indeed reach a fair amount of communica
 \subsubsection{Discussion}
  The results of baseline experiment 1 demonstrate that the agents can still reach communicative success\is{communicative success} if they use their world model for inferring the intended meaning. The proposed machinery thus works but only under certain conditions. For one thing, the hearer needs to have witnessed the scene in order to make the correct inferences. Second, the context cannot be too ambiguous otherwise interpretation can involve multiple hypotheses. As can be read from the average communicative success\is{communicative success} measure, this happens in 30\% of the cases. Failed games typically occur when the scene contains at least two event token\is{event token}s which have the same event type\is{event type} but which involve different participants.
 
+\largerpage
 Improving communicative success\is{communicative success} in the failed games could be achieved in many ways: agents can be given more complex dialogue\is{dialogue} strategies, the speaker can use pointing, the hearer can be more bold in making assumption\is{assumption}s about the speaker's intention or ask for additional feedback, etc. These strategies would however involve more negotiat\is{negotiation}ion and do not reduce the cognitive load during interpretation for the hearer. Additional marking, however, would be a solution which could resolve ambiguity\is{ambiguity} and reduce cognitive effort\is{cognitive effort} during interpretation at the same time. This solution will be tested in the next baseline experiment.
 
 \section{Baseline experiment 2: specific marking}
@@ -476,11 +481,6 @@ Baseline experiment 1 showed how agents can still reach communicative success\is
 \subsection{Speaker-based innovation}
 \is{innovation}
 
-\begin{figure}[t]
-\centerline{\includegraphics[width=\linewidth]{Chapter3/figs/re-entrance}}
-  \caption[Speaker re-entrance]{Before transmitting an utterance to the hearer, the speaker ``re-enters'' her own utterance in her language system and uses herself as a model of the hearer. In this way the speaker estimates whether there might be problems or too much complexity for the hearer during parsing. If so, the speaker tries to repair\is{learning strategies!repair strategies} the problem.}
-   \label{f:re-entrance}
-\end{figure}
 
 In baseline experiment 1 the hearer is faced with the cognitive load of figuring out who's doing what in events during each interaction. Moreover, if the context is complex enough it may not be clear which event the speaker was referring to. In this experiment, the agents are therefore endowed with a second key cognitive ability which involves the {\bfseries innovat\is{innovation}ion and expansion} of their language through event-specific marker\is{case!case marking}s. This ability comprises three subparts:
 
@@ -496,6 +496,13 @@ In baseline experiment 1 the hearer is faced with the cognitive load of figuring
 \citep{steels03language} -- also called the ``obverter'' strategy by \citet{smith03intelligent}.
 
 Re-entrance\is{re-entrance} can be thought of as self-monitoring\is{monitoring} in which the speaker does not directly transmit his utterance to the hearer, but first ``re-enters'' the utterance into his own linguistic system and parses and interprets the utterance himself as if he was the hearer. By taking himself as a model to simulate the linguistic behaviour of the hearer, the speaker can detect whether there might be problems or difficulties during parsing and interpretation. If so, the speaker will try to solve this problem. This strategy is illustrated in \figref{f:re-entrance}. Similarly, the hearer can also use a re-entrant mapping for simulating the behaviour of the speaker. Technically speaking, achieving re-entrance\is{re-entrance} is not so difficult since the agents in these experiments can act both as a speaker and as a hearer.
+
+\begin{figure}[b]
+\centerline{\includegraphics[width=\linewidth]{Chapter3/figs/re-entrance}}
+  \caption[Speaker re-entrance]{Before transmitting an utterance to the hearer, the speaker ``re-enters'' her own utterance in her language system and uses herself as a model of the hearer. In this way the speaker estimates whether there might be problems or too much complexity for the hearer during parsing. If so, the speaker tries to repair\is{learning strategies!repair strategies} the problem.}
+   \label{f:re-entrance}
+\end{figure}
+
 
 Re-entrance\is{re-entrance} is thus a crucial strategy in inferential coding system\is{inferential coding system}s: if the speaker wants to solve a problem through innovat\is{innovation}ion, he needs to have an educated guess about the hearer's knowledge and which aspects of the common ground can be exploited for getting the message across. The hearer has to perform the same kind of reasoning for guessing the speaker's intentions. Human language users obviously adapt their linguistic behaviours to their speech partners (e.g. when speaking to children or second language learners). Given the fact that all agents in the experiments are each other's peers, the best model they can have of other agents is themselves.
 
@@ -650,6 +657,7 @@ Before the repair\is{learning strategies!repair strategies}, this would be the f
 \z
 
 
+\newpage
 Next, the speaker can unify\is{unify and merge} and merge the new morph-rule with node-3. The left-pole of the morph-rule (which is syntactic, see \sectref{s:morph-rule}) looks for any unit containing the feature-value pair `(syn-role syn-role-1)' which is indeed present in the syntactic pole of node-3. Next, the right-pole of the morph-rule is merged with the right-pole of node-3:
 
 
@@ -731,15 +739,7 @@ As can be seen in the set of bindings, there are no unexpressed variable equal\i
 
 However, as soon as we scale up the experiments to multi-agent population\is{speech population}s involving at least three agents, a pool of synchron\is{synchronic}ic variation\is{variation} naturally arises since the agents can independently come up with different innovat\is{innovation}ions for the same problems. The agents therefore need to have an alignment strateg\is{alignment strategy}y that enables them to deal with the variety and to converge on a shared set of preferred marker\is{case!case marking}s.
 
-\begin{figure}[htp]
-\centerline{\begin{tabular}{c}
-\includegraphics[width=0.8\linewidth]{Chapter3/figs/graph-base2-effort}
- \\
- \includegraphics[width=0.8\linewidth]{Chapter3/figs/graph-base2-size}
-  \end{tabular}}
-  \caption[Baseline experiment 2: replication]{The top graph shows that the agents rapidly reach 100\% communicative success\is{communicative success} in the two-agent set-up. The agents also succeed in reducing the cognitive effort\is{cognitive effort} to zero. The bottom graph shows that they need to learn and store 30 specific marker\is{case!case marking}s in their inventory to do so.}
-\label{f:base2-effort}
-\end{figure}
+
 
 In \sectref{s:towards-grammar} I argued that the experiments on grammar first of all try to move all the previous work on lexicon\is{lexicon} formation onto the domain of grammar, so this experiment starts with a similar alignment strateg\is{alignment strategy}y as was suggested in prior work. This strategy goes as follows: each construction has its own {\bfseries confidence\is{confidence} score} between 0 and 1. The higher the score, the more confident the agent is that the item is a convention\is{convention}alized unit in the population\is{speech population}. Based on the game's success and based on the speaker's behaviour, the hearer will update the scores in the inventory as follows:
 
@@ -755,47 +755,73 @@ The fact that only the hearer performs score updating captures the intuition tha
 The above diagnostic\is{learning strategies!diagnostics}s and repair\is{learning strategies!repair strategies} strategies have been implemented and tested in three different simulations. The first series (set-up 2a) features a population\is{speech population} of two agents and replicates the results obtained by \citet{steels02simulating, steels04constructivist}. The second experiment (set-up 2b) involves a population\is{speech population} of ten agents in which the consolidation\is{consolidation} strategies become necessary for convergence. Both experiments feature the skewed frequency\is{frequency} of event type\is{event type}s mentioned in \sectref{s:world}. A third set-up (set-up 2c) also features 10 agents, but this time the skewed frequency\is{frequency} was replaced by an equal\is{variable equality} frequency\is{frequency} of event type\is{event type}s in order to study the convergence and competit\is{competition}ion dynamics more easily. All the results were obtained after ten series of language game\is{language game}s for each simulation.
 
 
-\begin{figure}[phtb]
+
+\subsubsection{Results of set-up 2a}
+ The results obtained from the replication experiment confirm the results of the original case experiment. The top graph in \figref{f:base2-effort} shows that the average cognitive effort\is{cognitive effort} needed by the speaker rapidly drops to zero if the agents start inventing and using specific marker\is{case!case marking}s to indicate relations between events and their participants. With the marker\is{case!case marking}s the agents are also capable of overcoming ambiguity\is{ambiguity} in the context since communicative success\is{communicative success} rises to 100\%. However, there is a price to pay for this optimization, which is shown in the bottom graph: for each participant role\is{participant role}, the agents have to learn and store a specific marker\is{case!case marking} in the inventory. In this two-agent simulation, no variation\is{variation} occurs so agreeing on a set of 30 marker\is{case!case marking}s is fairly trivial.
+
+\begin{figure} 
+\centerline{\begin{tabular}{c}
+\includegraphics[width=0.8\linewidth]{Chapter3/figs/graph-base2-effort}
+ \\
+ \includegraphics[width=0.8\linewidth]{Chapter3/figs/graph-base2-size}
+  \end{tabular}}
+  \caption[Baseline experiment 2: replication]{The top graph shows that the agents rapidly reach 100\% communicative success\is{communicative success} in the two-agent set-up. The agents also succeed in reducing the cognitive effort\is{cognitive effort} to zero. The bottom graph shows that they need to learn and store 30 specific marker\is{case!case marking}s in their inventory to do so.}
+\label{f:base2-effort}
+\end{figure}
+
+
+
+\subsubsection{Results of set-up 2b}
+ If the population\is{speech population} size is increased, the agents need much more time to learn all the variation\is{variation}s floating in the population\is{speech population} and to converge on a shared set of 30 marker\is{case!case marking}s. As \figref{f:base2-size1} shows, the agents need 80.000 language game\is{language game}s in order to agree on this set. This is still fairly rapid: it means that each agent needs to play an average of 8.000 games in order to conform to the language of its peers.
+
+\begin{figure} [p]
 \centerline{\includegraphics[width=\textwidth]{Chapter3/figs/graph-base2-size1}}
   \caption[Baseline experiment 2: number of markers (skewed frequency\is{frequency})]{This graph shows the number of specific marker\is{case!case marking}s in baseline experiment 2b for 10 series of 80.000 language game\is{language game}s in a population\is{speech population} of 10 agents and a context size of five events. The agents start innovat\is{innovation}ing and learning marker\is{case!case marking}s rapidly during the first 3.000 games after which a short period of alignment seems to kick in. The number of marker\is{case!case marking}s then rises again between game 7.000 and game 20.000. This is due to the skewed frequency\is{frequency} of the event-tyes: events that potentially take three participants are very rare in the data and marker\is{case!case marking}s for them are only now being acquired by all agents. Finally, a long alignment period starts which also takes much more time for the less-frequent event type\is{event type}s.}
    \label{f:base2-size1}
 \end{figure}
-\subsubsection{Results of set-up 2a}
- The results obtained from the replication experiment confirm the results of the original case experiment. The top graph in \figref{f:base2-effort} shows that the average cognitive effort\is{cognitive effort} needed by the speaker rapidly drops to zero if the agents start inventing and using specific marker\is{case!case marking}s to indicate relations between events and their participants. With the marker\is{case!case marking}s the agents are also capable of overcoming ambiguity\is{ambiguity} in the context since communicative success\is{communicative success} rises to 100\%. However, there is a price to pay for this optimization, which is shown in the bottom graph: for each participant role\is{participant role}, the agents have to learn and store a specific marker\is{case!case marking} in the inventory. In this two-agent simulation, no variation\is{variation} occurs so agreeing on a set of 30 marker\is{case!case marking}s is fairly trivial.
 
+The graph first shows a steep rise to an average of 40 marker\is{case!case marking}s in the beginning after which an alignment phase seems to start. However, the number of marker\is{case!case marking}s starts to climb up again after 7.000 games and reaches a height of about 45 marker\is{case!case marking}s by the time 20.000 games have been played. Then there is a long and gradual slope towards convergence at 80.000 games. The two peaks in the graph are the result of the skewed frequency\is{frequency} of event type\is{event type} occurrences: marker\is{case!case marking}s for three-participant events are very rare and are therefore constructed, learned and propagat\is{propagation}ed later than the frequent marker\is{case!case marking}s. Even so, the agents still reach agreement and communicative success\is{communicative success} while reducing the cognitive effort\is{cognitive effort} needed if they are given enough time.
 
-\begin{figure}[ht]
+\begin{figure}[p]
 \centerline{\includegraphics[width=0.8\textwidth]{Chapter3/figs/graph-base2-size2}}
   \caption[Baseline experiment 2c: number of markers (equal\is{variable equality} frequency\is{frequency})]{This graph shows the number of specific marker\is{case!case marking}s in baseline experiment 2c for 10 series of 7.000 language game\is{language game}s in a population\is{speech population} of 10 agents and a context size of five events. This case, all event type\is{event type}s occur with the same frequency\is{frequency} so we can see the convergence dynamics in the population\is{speech population} more clearly: agents invent and learn new marker\is{case!case marking}s during the first 1.500 language game\is{language game}s. The agents then need another 4.500 language game\is{language game}s in order to align their linguistic inventor\is{linguistic inventory}ies with each other.}
    \label{f:base2-size2}
 \end{figure}
-\subsubsection{Results of set-up 2b}
- If the population\is{speech population} size is increased, the agents need much more time to learn all the variation\is{variation}s floating in the population\is{speech population} and to converge on a shared set of 30 marker\is{case!case marking}s. As \figref{f:base2-size1} shows, the agents need 80.000 language game\is{language game}s in order to agree on this set. This is still fairly rapid: it means that each agent needs to play an average of 8.000 games in order to conform to the language of its peers.
 
-The graph first shows a steep rise to an average of 40 marker\is{case!case marking}s in the beginning after which an alignment phase seems to start. However, the number of marker\is{case!case marking}s starts to climb up again after 7.000 games and reaches a height of about 45 marker\is{case!case marking}s by the time 20.000 games have been played. Then there is a long and gradual slope towards convergence at 80.000 games. The two peaks in the graph are the result of the skewed frequency\is{frequency} of event type\is{event type} occurrences: marker\is{case!case marking}s for three-participant events are very rare and are therefore constructed, learned and propagat\is{propagation}ed later than the frequent marker\is{case!case marking}s. Even so, the agents still reach agreement and communicative success\is{communicative success} while reducing the cognitive effort\is{cognitive effort} needed if they are given enough time.
 
+\subsubsection{Results of set-up 2c}
+ In the third set-up all the event type\is{event type}s occur with the same frequency\is{frequency} so we can better study the convergence dynamics without other influences. \figref{f:base2-size2} shows that the agents indeed need significantly less time than in the second set-up: between six and seven thousand language game\is{language game}s. On average this means about 600--700 games per agent, which comes close to the 500 games needed by the agents in two-agent simulations. The convergence task here is comparable in difficulty to a multiple word naming game\is{language game!multiword naming game} involving 30 objects \citep[see][]{vanlooveren05design}. The graph shows that the agents keep innovat\is{innovation}ing and learning new marker\is{case!case marking}s during the first 1.500 language game\is{language game}s after which they rapidly converge on a shared set of 30 marker\is{case!case marking}s. The peak of 70 marker\is{case!case marking}s -- as opposed to the peak of 45 with the skewed frequency\is{frequency} -- is normal since there are more competing marker\is{case!case marking}s floating in the population\is{speech population} at the same time.
+
+
+
+\largerpage 
+\figref{f:base2-comp} gives a snapshot of one agent's knowledge of marker\is{case!case marking}s for the participant role\is{participant role} `walk-to-1'. The agent learns three marker\is{case!case marking}s at about the same time: {\em -pev}, {\em -duin}, and {\em -hesae}. The marker\is{case!case marking} {\em -duin} seems to be the winning marker\is{case!case marking} and reaches a confidence\is{confidence} score of 0.9 by the time the agents have played 2.000 language game\is{language game}s. However, the agent then learns a new marker\is{case!case marking} {\em -zuix} which seems to be quite successful in the population\is{speech population}: its confidence\is{confidence} score rapidly increases to the maximum while {\em -duin} goes downhill very fast because of lateral inhibition\is{lateral inhibition}. In the end, {\em -zuix} wins the competit\is{competition}ion. 
+
+
+
+
+\clearpage
 
 \begin{figure}[t]
 \centerline{\includegraphics[width=0.87\textwidth]{Chapter3/figs/graph-base2-comp}}
   \caption[Baseline experiment 2: snapshot of competit\is{competition}ion (equal\is{variable equality} frequency\is{frequency})]{This graph shows a snapshot of the competit\is{competition}ion between forms for marking the participant role\is{participant role} `walk-to-1' within agent 1. Agent 1 learns the marker\is{case!case marking} {\em -pev} at first, but soon also observes {\em -duin} and {\em -hesae}. The marker\is{case!case marking} {\em -duin} seems to win the competit\is{competition}ion and even reaches a confidence\is{confidence} score of 0.9 after 2.000 language game\is{language game}s. However, the agent then learns another marker\is{case!case marking} {\em -zuix} which is apparently shared by a lot of other agents in the population\is{speech population}: at game 3.000 it has already pushed {\em -duin} down and it reaches 1.0 confidence\is{confidence} score.}
    \label{f:base2-comp}
 \end{figure}
-\subsubsection{Results of set-up 2c}
- In the third set-up all the event type\is{event type}s occur with the same frequency\is{frequency} so we can better study the convergence dynamics without other influences. \figref{f:base2-size2} shows that the agents indeed need significantly less time than in the second set-up: between six and seven thousand language game\is{language game}s. On average this means about 600--700 games per agent, which comes close to the 500 games needed by the agents in two-agent simulations. The convergence task here is comparable in difficulty to a multiple word naming game\is{language game!multiword naming game} involving 30 objects \citep[see][]{vanlooveren05design}. The graph shows that the agents keep innovat\is{innovation}ing and learning new marker\is{case!case marking}s during the first 1.500 language game\is{language game}s after which they rapidly converge on a shared set of 30 marker\is{case!case marking}s. The peak of 70 marker\is{case!case marking}s -- as opposed to the peak of 45 with the skewed frequency\is{frequency} -- is normal since there are more competing marker\is{case!case marking}s floating in the population\is{speech population} at the same time.
 
-\figref{f:base2-comp} gives a snapshot of one agent's knowledge of marker\is{case!case marking}s for the participant role\is{participant role} `walk-to-1'. The agent learns three marker\is{case!case marking}s at about the same time: {\em -pev}, {\em -duin}, and {\em -hesae}. The marker\is{case!case marking} {\em -duin} seems to be the winning marker\is{case!case marking} and reaches a confidence\is{confidence} score of 0.9 by the time the agents have played 2.000 language game\is{language game}s. However, the agent then learns a new marker\is{case!case marking} {\em -zuix} which seems to be quite successful in the population\is{speech population}: its confidence\is{confidence} score rapidly increases to the maximum while {\em -duin} goes downhill very fast because of lateral inhibition\is{lateral inhibition}. In the end, {\em -zuix} wins the competit\is{competition}ion. 
-\begin{figure}[t]
+
+
+Finally, \figref{f:base2-effort2} shows the average communicative success\is{communicative success} and cognitive effort\is{cognitive effort} again. The results show that the agents in the multi-agent simulations also rapidly reach 100\% communicative success\is{communicative success} by using marker\is{case!case marking}s. Cognitive effort\is{cognitive effort} also goes down until no inferences need to be made anymore.
+
+\begin{figure} 
 \centerline{\includegraphics[width=\textwidth]{Chapter3/figs/graph-base2-effort2}}
   \caption[Baseline experiment 2: success and effort (equal\is{variable equality} frequency\is{frequency})]{In the multi-agent population\is{speech population}s too the agents succeed in reaching communicative success\is{communicative success} as well as reducing the cognitive effort\is{cognitive effort} needed for interpretation.}
    \label{f:base2-effort2}
 \end{figure}
 
-Finally, \figref{f:base2-effort2} shows the average communicative success\is{communicative success} and cognitive effort\is{cognitive effort} again. The results show that the agents in the multi-agent simulations also rapidly reach 100\% communicative success\is{communicative success} by using marker\is{case!case marking}s. Cognitive effort\is{cognitive effort} also goes down until no inferences need to be made anymore.
-
-
 \subsubsection{Discussion}
  The results of baseline experiment 2 clearly illustrate how agents can use locally available information\is{formation} to assess their own linguistic interactions and couple this assessment to repair\is{learning strategies!repair strategies} and consolidation\is{consolidation} strategies in order to improve communication. In this case, the agents mainly acted to reduce the semantic complexity of interpretation for the hearer: if additional marker\is{case!case marking}s are introduced for explicitly indicating the relations between events and their participants, parsing leads the agents immediately to the desired bindings in interpretation. Without the marker\is{case!case marking}s, additional inferences would still be needed.
 
+\largerpage
 However, a price has to be paid for reducing the effort of interpretation and that is an increased inventory size. During the language game\is{language game}s, the agents learn 70 marker\is{case!case marking}s on average and retain 30 of them, each one specific to a particular participant role\is{participant role}. The inventory size is in fact not the main problem here but a side-effect of a bigger issue: since the marker\is{case!case marking}s are restricted to one function only, the agents (given their present capabilities) cannot use them to go beyond the data of known events. Hence there is no generalization. Inventing new marker\is{case!case marking}s for each participant role\is{participant role} may be an efficient strategy in a small and fixed world, but becomes problematic once agents have to adapt to new meanings and communicative challenges.
 
 Coupling these results back to natural languages, there are thus two clear qualitative differences: (a) marker\is{case!case marking}s in natural languages {\em do} generalize and become polysemous; and (b) they are not randomly invented but recruited from existing lexical items (see sections \ref{s:stage2} and \ref{s:stage3}). Both issues will have to be addressed in other experiments.
@@ -1033,7 +1059,7 @@ This kind of (token) frequency\is{frequency} favours more general constructions:
 \subsection{Results and discussion of set-up 3a}
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=0.9\textwidth]{Chapter3/figs/graph-base3-size3a}}
+\centerline{\includegraphics[width=\textwidth]{Chapter3/figs/graph-base3-size3a}}
   \caption[Baseline experiment 3a: number of markers]{In the two-agent simulations, the agents have no problems aligning their inventories since there is no variation\is{variation} in the population\is{speech population}. In ten series of 500 language game\is{language game}s, the agents came up with an average of 6--8 marker\is{case!case marking}s for semantic role\is{semantic role}s and an average of 6-9 marker\is{case!case marking}s for specific participant role\is{participant role}s. The semantic role\is{semantic role}s gather together up to 24 participant role\is{participant role}s out of 30.}
    \label{f:base3-size3a}
 \end{figure}
@@ -1088,7 +1114,7 @@ In the results there is still a fairly large residue of verb\is{verb}-specific m
 \subsection{Results and discussion of set-up 3b}
 
 \begin{figure}[ht]
-\centerline{\includegraphics[width=0.9\textwidth]{Chapter3/figs/graph-base3-size3b}}
+\centerline{\includegraphics[width=\textwidth]{Chapter3/figs/graph-base3-size3b}}
   \caption[Baseline experiment 3b: number of markers]{When scaling the experiments up to multi-agent simulations, the traditional alignment strateg\is{alignment strategy}ies used in prior experiments on lexicon\is{lexicon} formation\is{formation} are not sufficient for the population\is{speech population} to reach convergence. For thirty participant role\is{participant role}s, the agents have to remember 140 variation\is{variation}s to communicate successfully, which is an average of 4,7 possible ways for marking each participant role\is{participant role}.}
    \label{f:base3-size3b}
 \end{figure}
@@ -1111,6 +1137,9 @@ The lack of convergence on a preferred set of marker\is{case!case marking}s clea
 
 I will go through an example to explain why the single confidence\is{confidence} score cannot be sufficient for polysemous form-meaning mappings. Suppose that an agent knows three marker\is{case!case marking}s: {\em -ma}, {\em -bo} and {\em -li} and that the first two are generalized to cover two roles each whereas {\em -li} is still a verb\is{verb}-specific marker\is{case!case marking}. For convenience's sake, I will not include all the linguistic items involved but treat the marker\is{case!case marking}s as if they were lexical items:
 
+
+\newpage
+
 \ea
 \parbox{\textwidth}{
 \begin{align*}
@@ -1122,6 +1151,7 @@ I will go through an example to explain why the single confidence\is{confidence}
 \end{align*}
 }
 \z
+
 
 \ea
 \parbox{\textwidth}{
@@ -1183,7 +1213,7 @@ Suppose now that the agent observes the utterance {\em boy -ma move-inside} in w
 }
 \z
 
-In another game, the same damage can be done for the marker\is{case!case marking} {\em -ma} so {\em -bo} can recover from its score decrease. Generalization thus tends to be harmful for the marker\is{case!case marking}s if only one score is used: the more general a role marker\is{case!case marking} gets, the more competit\is{competition}ors it has and thus the more chances that its score will be decreased. Specific marker\is{case!case marking}s can escape punishment through lateral inhibition\is{lateral inhibition} much more easily. On the other hand, if it has competing marker\is{case!case marking}s which are generalized, they can get punished too even if a different participant role\is{participant role} was involved. Suppose that {\em -bo} was observed for marking `move-inside-1' this time, then not only {\em -ma} is seen as a competit\is{competition}or, but also {\em -li} because it overlaps with {\em -bo} for marking `move-1'.
+In another game, the same damage can be done for the marker\is{case!case marking} {\em -ma} so {\em -bo} can recover from its score decrease. Generalization thus tends to be harmful for the marker\is{case!case marking}s if only one score is used: the more general a role marker\is{case!case marking} gets, the more competit\is{competition}ors it has and thus the more chances that its score will be decreased. Specific marker\is{case!case marking}s can escape punishment through lateral inhibition\is{lateral inhibition} much more easily. On the other hand, if it has competing marker\is{case!case marking}s which are generalized, they can get punished too even if a different participant role\is{participant role} was involved. Suppose that {\em -bo} was observed for marking `move-inside-1' this time, then not only {\em -ma} is seen as a competit\is{competition}or, but also {\em -li} because it overlaps with {\em -bo} for marking \mbox{`move-1'.}
 
 There is thus a constant push-and-pull effect in which marker\is{case!case marking}s may get cornered by others but then all of a sudden get more successful again. This is the reason why the agents can never converge on a preferred set: the single confidence\is{confidence} score does not allow marker\is{case!case marking}s to be successful in one particular context but unsuccessful in another.
 
@@ -1201,6 +1231,7 @@ There is thus a constant push-and-pull effect in which marker\is{case!case marki
    \label{f:base3-effort3c}
 \end{figure}
 
+\largerpage
 \subsubsection{Results}
  The results of baseline experiment 3c indicate that the alignment strateg\is{alignment strategy}y of reinforc\is{reinforcement}ement and lateral inhibition\is{lateral inhibition} can lead to convergence if it is applied in a more fine-grained way. This time, the agents not only use communicative success\is{communicative success} as a guidance but also co-occur\is{co-occurrence}rence links: instead of positing one score on the linguistic item as a whole, they now keep a link between co-occur\is{co-occurrence}ring items and assign a confidence\is{confidence} score to that link. In case of success, the score of the link is increased and only scores of competing {\em links} are decreased. In this model, a marker\is{case!case marking} disappears from the linguistic inventor\is{linguistic inventory}y once it has no links to other linguistic items anymore with a confidencescore higher than zero.
 

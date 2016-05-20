@@ -9,6 +9,7 @@ The time has now come to weave through the theoretical foundations and experimen
 
 The other three sections of this chapter deal with the contributions of this book to linguistics. More specifically, I believe this book can have an impact in three domains. First of all, the formalism proposed in Chapter \ref{c:ar} is the first computational implementation of \is{event structure}argument structure ever in a construction grammar framework. In \sectref{s:comp-formalism}, I will compare it to an upcoming alternative in Sign-Based Construction Grammar\is{construction grammar!Sign-Based Construction Grammar}. A second contribution has to do with the structure of the linguistic inventor\is{linguistic inventory}y. The problem of systematicity\is{systematicity} and multi-level selection\is{selection}\is{multi-level selection} is new to linguistics and may have an impact on how we should conceive the constructicon. I will discuss this matter from the viewpoint of construction grammars and usage-based model\is{usage-based model}s of language in \sectref{s:comp-constructicon}. Finally, the experiments in this book and prior work in the field provide alternative evidence in recent debates in linguistic typology\is{linguistic typology} and grammaticalization\is{grammaticalization}. These debates concern the status of semantic map\is{semantic maps}s and thematic hier\is{thematic hierarchy}archies as universals of human cognition, and the appropriateness of reanalysis\is{reanalysis} as a mechanism for explaining grammaticalization\is{grammaticalization}. \sectref{s:comp-semmaps} introduces the debates and illustrates how experiments on artificial language evolution\is{artificial language evolution} can propose a novel way of thinking about the issues at hand.
 
+\newpage
 \section{Pushing the state-of-the-art}
 \label{s:impact}
 
@@ -18,7 +19,7 @@ The significance of scientific research can only be fully appreciated by compari
 
 The main objective of Moy's work is to expand the Iterated Learning Model\is{Iterated Learning Model (ILM)} as presented by \citet{kirby02learning} in order to study the emergence\is{emergence} of a case grammar\is{case!case grammar}. Kirby's original experiments investigated how a recursi\is{recursion}ve word-order syntax can emerge as a side-effect of the cultural transmission \is{transmission}of language from one generation to the next without the need for communicative pressures \citep[the so-called ``function independence principle\is{function independence principle}'', ][]{brighton05cultural}. Moy's first series of experiments are a replication of these simulations.
 
-
+\largerpage[-2]
 \subsubsection{The experiment}
 The experiment features a population\is{speech population} of two agents: one ``adult'' speaker and one ``child'' learner. The adult speaker has to produce a number of utterances that are observed by the learner. The adult speaker has an innovat\is{innovation}ion strategy which allows him to invent a random holistic\is{holistic versus compositional languages} word for each new meaning if he does not know a word yet. The child learner is equipped with a Universal Grammar\is{Universal Grammar} in the form of an inducti\is{induction}on algorithm and will try to induce as much grammatical rules as possible. The child will thus overgeneraliz\is{generalization}e the input provided by the speaker which causes language change\is{language change} as illustrated in the child-based model in Chapter 1. After some time, the adult agent ``dies'' and the learner becomes the new adult speaker so its grammar becomes the new convention\is{convention}. A new child learner is then introduced into the population\is{speech population}. This population\is{speech population} turnover is iterated thousands of times.
 
@@ -71,7 +72,7 @@ This kind of ``suboptimal'' grammar is not exclusive to Moy's replication experi
 \begin{quote}
 Could we view such a grammar as exhibiting some form of primitive case system\is{case!case system}, in that it is possible to distinguish subject\is{syntactic role!subject} forms of noun\is{noun}s from object\is{syntactic role!object}s, rather than using the same form for both? This is analog\is{analogy}ous perhaps to highly irregular forms of case found in some languages, such as the English\is{English} pronoun\is{pronoun}s {\em I, me, we} and {\em us}, where the nominative\is{case!nominative} forms, ({\em I} and {\em we}) used to the [sic] represent the subject\is{syntactic role!subject} of a sentence, have no morphological relationship to the accusative\is{case!accusative} forms used for object\is{syntactic role!object}s ({\em me} and {\em us}). \citep[p. 114]{moy06case}
 \end{quote}
-
+ 
 \subsubsection{Discussion}
 As I argued in \sectref{s:problem-systematicity}, considering the above grammar as some kind of primitive case system\is{case!case system} is an over-interpretation of experimental results. While there are many attested examples in natural languages in which a word form depends on the linguistic context (e.g. many Slavic languages such as Russian\is{Russian} use different lexical entr\is{lexical entry}ies for verb\is{verb}s depending on aspect\is{aspect}), they do not come about as frozen accidents of the learning mechanism. As for the English\is{English} pronoun\is{pronoun}s, they are remnants of a stage in the development of English\is{English} where the grammar had a fully productive case system\is{case!case system}. Both Moy and Kirby thus fail to identify the problem of systematicity\is{systematicity} that occurs in the experiments.
 
@@ -79,6 +80,7 @@ This observation illustrates the importance of a strong dialogue\is{dialogue} wi
 
 In this book, I solved the problem of frozen accidents through multi-level selection\is{selection}\is{multi-level selection}. I implemented multi-level selection\is{selection}\is{multi-level selection} as an alignment strateg\is{alignment strategy}y which is therefore tightly coupled to communicative success\is{communicative success}. In the ILM\is{Iterated Learning Model (ILM)}, however, communicative success\is{communicative success} has no impact on the behaviour of the agents so multi-level selection\is{selection}\is{multi-level selection} cannot be readily applied here. Second, multi-level selection\is{selection}\is{multi-level selection} only makes sense if there is variation\is{variation} in the model, but the ILM\is{Iterated Learning Model (ILM)} avoids variation\is{variation} as much as possible so once a frozen accident occurs, it is hard to get rid of it.
 
+\largerpage[-1]
 Even though it is unwarranted to equate the frozen accidents in the ILM\is{Iterated Learning Model (ILM)} experiments with case systems\is{case!case system} in natural languages, Moy's work takes an interesting turn by asking how the ILM\is{Iterated Learning Model (ILM)} can be expanded so that it favours these ``suboptimal'' languages. If Moy succeeds in demonstrating the factors that {\em systematically} lead to the emergence\is{emergence} of such languages, the experiments could still come up with relevant pressures for evolving a case language.
 
 \subsection{Experiment 2: dealing with variation}\is{variation}
@@ -91,7 +93,7 @@ In order to encourage the emergence\is{emergence} of a primitive case system\is{
 Moy first tries to introduce variation\is{variation} in the word order\is{word order} by allowing the agents to randomly choose among conflicting rules or by reshuffling the inventory. In all the simulations, however, the agents fail to converge on a compositional grammar: the linguistic inventor\is{linguistic inventory}ies of the agents are very large and too much conflicts are known for reaching a regular language. Moy argues that this is due to the fact that compositionality can only emerge in the ILM\is{Iterated Learning Model (ILM)} if variation\is{variation} in meaning-form mappings is ignored: learners will not consider any new variation\is{variation} anymore once they have associated a certain meaning with a certain form, and the deterministic parser excludes the use of variation\is{variation}s. The same conclusion has also been suggested by \citet{smith03transmission}, but as opposed to Moy who rejects this unrealistic assumption\is{assumption}, Smith argues that natural languages have such a bias\is{learning bias} towards one-to-one mappings as well.
 
 Moy thus points to a fundamental problem with the ILM\is{Iterated Learning Model (ILM)}: in order to allow variation\is{variation} in word order\is{word order}, the agents need to be capable of parsing and producing competing rules. Yet, in order for the grammar to emerge at all, the ILM\is{Iterated Learning Model (ILM)} expects that a single variation\is{variation} is maintained. Moy notes that in order to dampen the search space, the agents need a way to prefer some variation\is{variation}s over other ones. She therefore endows the agents with an alignment strateg\is{alignment strategy}y which takes the frequency\is{frequency} of rules into account. The more frequent the rule, the higher the probability that the agent will select it for production. The alignment strateg\is{alignment strategy}y allows the agents to reach a compositional language again. It does not, however, lead to an increase in the number of primitive case grammar\is{case!case grammar}s. In additional experimental set-ups, Moy allows even more word order\is{word order} freedom by reshuffling sentences before they are actually produced, but this again does not lead to a preference for the primitive case grammar\is{case!case grammar}. Finally, manipulating the size of the transmission \is{transmission}bottleneck (i.e. the number of utterances that the child learner observes during a lifetime) does not yield significant results either.
-
+ 
 Moy concludes that the small effect of free word order\is{word order} and the bottleneck\is{bottleneck} size is due to the fact that the agents do not have to reach mutual understanding: if the free word order\is{word order} cannot be parsed by the hearer, it will simply be ignored so it will not lead to a change in the linguistic inventor\is{linguistic inventory}y. In other words, the child agent does not really care about converging on the same language as that of the adult speaker but learns whatever hypotheses its inducti\is{induction}on algorithm comes up with. Moy argues that the agents thus have no need for disambiguating semantic role\is{semantic role}s, which prevents them from reaching a case-like grammar.
 
 
@@ -192,7 +194,7 @@ What is also striking about Moy's results is the fact that even though there are
 
 
 \begin{centering}
-\begin{table}[t]
+\begin{table}[b]
 \begin{tabular}{ l  l  l }
 \lsptoprule
  & {\bfseries Iterated Learning} & {\bfseries This book}
@@ -452,7 +454,7 @@ The work in this book has also uncovered the problem of systematicity\is{systema
 
 The experiments in Chapter \ref{c:experiment1}, however, demonstrate that this is not the case. Next to an innovat\is{innovation}ion strategy which systematically reuse\is{reuse}s productive and successful items of the inventory, language users need an alignment strateg\is{alignment strategy}y based on multi-level selection\is{selection}\is{multi-level selection} to further streamline their inventories and keep the generaliz\is{generalization}ation rate of their language high. The experiments demonstrated that a top-down strategy does not suffice but that the success and evolution\is{evolution!cultural evolution} of specific instances must also have a way to influence the more schematic constructions in the network. The networks therefore need {\bfseries systematicity\is{systematicity} links} rather than (only) taxonomy links.
 
-
+\largerpage[-1]
 \subsubsection{On the status of inheritance networks.}\is{inheritance}
 
 The experiments on multi-level selection\is{selection}\is{multi-level selection} show how a linguistic network similar to the one proposed in Radical Construction Grammar could gradually emerge: a nonreductionis\is{reductionism}t approach is taken in which each construction has its specific categories. However, FCG\is{construction grammar!Fluid Construction Grammar} does not make explicit generaliz\is{generalization}ations over these constructions as is done in RCG\is{construction grammar!Radical Construction Grammar}, but rather keeps systematicity\is{systematicity} links which are used by the multi-level selection\is{selection}\is{multi-level selection} alignment strateg\is{alignment strategy}y. There is no need for an inheritance\is{inheritance} network and all utterances are license\is{license}d by unify\is{unify and merge}ing and merging fully specified constructions.
@@ -470,6 +472,7 @@ The previous two sections mainly dealt with the relations between construction g
 
 Semantic maps have offered linguists an appealing and empirically rooted methodology for visualizing the multifunctional nature of grammatical categories and for describing recurrent structural patterns in how these functions relate to each other. Consider the following examples in which various functions of the English\is{English} preposition\is{preposition} {\em to} are illustrated along with some corresponding examples from the French\is{French} preposition\is{preposition} {\em à} and the German\is{German} dative\is{case!dative} case \citep[taken from][example 2, p. 212 and example sentences on p. 213--215]{haspelmath03geometry}:
 
+\largerpage[-1]
 \ea
 English\is{English} preposition\is{preposition} {\em to}:
 \label{e:to-dative}
@@ -539,17 +542,20 @@ As mentioned in \sectref{s:history-of-research}, prior work in the field has alr
 At the start of a game, two agents are randomly chosen from the population\is{speech population} to act as a speaker and as a hearer. The speaker chooses an object from the context to talk about and needs to conceptualize a meaning which discriminates the topic from the other objects in the context. For example, if the topic is a green ball and there are also three red balls in the context, then the topic's colour\is{colour} would be a good discriminating feature. At the beginning of the experiment, the agents have no concepts yet so the speaker has to create a new one. He will do so by taking the minimal set of features that can discriminate the topic from the other objects. The speaker will then invent a new word for this concept\is{concept formation} or meaning and transmit it to the hearer.
 
 The hearer will in turn experience a communicative problem: He does not know the word that was used by the speaker. The game thus fails, but the speaker points to the intended object. The hearer then tries to retrieve the intended meaning through the same discrimination game\is{discrimination game}. Often there are many different sets of discriminating features possible, but if the agents play a sufficient amount of language game\is{language game}s with each other, they come to an agreement on what the form-meaning pairs are in their language and thus also reach a shared conceptual space\is{conceptual space}. Similar experiments have been successfully performed in the domains of colour\is{colour} terms \citep{steels05coordinating} and spatial\is{spatial language} language \citep{steels08perspective-alignment}, and they have been scaled up to large meaning spaces \citep{wellens08coping}.
-\begin{figure}[t]
-\centerline{\includegraphics[scale=0.7]{Chapter5/figs/sem-map1}}
-  \caption[Two ``semantic map\is{semantic maps}s'' from the experiments]{This diagram compares two different artificial grammars with respect to two categories in each of them. The languages were formed using the final set-up of experiment 3 (\sectref{s:pattern-exp-3}). Even though the agents did not have a continuous conceptual space\is{conceptual space} in advance, it is nevertheless possible to draw a primitive semantic map\is{semantic maps} afterwards.}
-   \label{f:semmap-1}
-\end{figure}
+
 
 
 \subsubsection{The contribution of this book}
 All of the above experiments confirm that communicative success\is{communicative success} can be a driving force for constructing an ontology of meaningful distinctions and that language can be used as a way to agree on a shared ontology among a population\is{speech population} of autonomous embodied artificial agents. These experiments, however, have only focused on concept-and-lexicon\is{lexicon} emergence so far, and the systematic relations between words have not been investigated yet. The experiments in this book, however, have polysemous semantic role\is{semantic role}s so they form an ideal starting point for testing the alternative hypothesis.
 
 \figref{f:semmap-1} illustrates how analog\is{analogy}ical reasoning can be responsible for constructing coherent classes of semantic role\is{semantic role}s. The diagrams shows two semantic map\is{semantic maps}s for two languages that were formed in the last set-up of experiment 3 as described in \sectref{s:pattern-exp-3} (multi-level selection\is{selection}\is{multi-level selection} with memory decay\is{memory decay} and pattern formation\is{pattern formation}\is{formation}). Both diagrams show that it is possible to draw a primitive semantic map\is{semantic maps} which compares the semantic role\is{semantic role}s of both languages. For example, in one language the marker\is{case!case marking} {\em -mepui} can be used for covering four participant role\is{participant role}s. Three of them (grasp-1, touch-1 and take-2) overlap with a semantic role\is{semantic role} of a different language. A similar observation counts for the two semantic role\is{semantic role}s in the second semantic map\is{semantic maps}.
+
+\begin{figure}[t]
+\centerline{\includegraphics[scale=0.7]{Chapter5/figs/sem-map1}}
+  \caption[Two ``semantic map\is{semantic maps}s'' from the experiments]{This diagram compares two different artificial grammars with respect to two categories in each of them. The languages were formed using the final set-up of experiment 3 (\sectref{s:pattern-exp-3}). Even though the agents did not have a continuous conceptual space\is{conceptual space} in advance, it is nevertheless possible to draw a primitive semantic map\is{semantic maps} afterwards.}
+   \label{f:semmap-1}
+\end{figure}
+
 
 A comparison of the formed artificial languages suggests that grammaticalization\is{grammaticalization} processes can be visualized as a movement or change in connected regions of a continuous domain as a side-effect of analog\is{analogy}ical reasoning: exten\is{extension}sion of a category happens when new situations are encountered which are closely related to the existing categories. This shows that semantic map\is{semantic maps}s could in principle be the result of dynamic processes involving analog\is{analogy}y rather than starting from universal conceptual space\is{conceptual space}.
 

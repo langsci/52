@@ -352,7 +352,7 @@ if __name__ == "__main__":
   #sort and reverse in order to get the order of edited volumes and incollection right 
   r.sort() 
   r = r[::-1] 
-  restrict = True #should only cited works be written to sorted.bib?
+  restrict = False #should only cited works be written to sorted.bib?
   #create the new bibtex records
   bibtexs = [Record(q,
                     inkeysd=citationsd, 
