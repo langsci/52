@@ -4,12 +4,14 @@
 \chapter{Baseline experiments}
 \label{c:base}
 
+\section{Introduction}
 The grammatical square\is{grammatical square} (see \figref{f:stage4}) illustrates the multifunctional and indirect nature of case marking\is{case!case marking}. It can also be read as a ``research roadmap'' for experiments on the emergence\is{formation} of a grammar for case. More specifically, the experiments must investigate how a population\is{speech population} of agents can evolve a grammar which takes care of (1) the mapping between event-specific participant role\is{participant role}s and generalized semantic role\is{semantic role}s, (2) the mapping between semantic role\is{semantic role}s and grammatical cases, and (3) the mapping between cases and surface case marker\is{case!case marking}s. Constructing and aligning this kind of grammar in a multi-agent population\is{speech population} is incredibly difficult because all mappings are agent-internal and are thus not directly observable by other agents. Moreover, these mappings vary depending on the communicative and linguistic context so the agents have to be capable of dealing with polysemy\is{polysemy}. Finally, linguistic convention\is{convention}s may constantly change so the agents have to be able to adapt to newly propagat\is{propagation}ed constructions.
 
 In this Chapter I will present three baseline experiments which first replicate simulations reported by \citet{steels02simulating, steels04constructivist} and then lift them towards a multi-agent simulation. I will specifically focus on which diagnostic\is{learning strategies!diagnostics}s, repair\is{learning strategies!repair strategies}s and alignment strateg\is{alignment strategy}ies are needed for each step of increased complexity. In the next section, I will first give an overview of the experimental set-up that is shared by all experiments after which the simulations themselves are reported.
 
 \section{Experimental set-up}
 
+\subsection{Overview}
 \begin{table}[t]
 % \centerline{\includegraphics[width=\linewidth]{Chapter3/figs/repairs}}
 
@@ -83,6 +85,7 @@ An obvious requirement for developing a grammar for marking event structure\is{e
 \label{s:world}
 
 
+\subsubsection{Overview}
 
 The semiotic cycle\is{semiotic cycle} in \figref{f:cycle} clearly shows that linguistic processing is only one part of the general cognitive architecture which is involved in communication. Even though the experiments in this book mainly focus on the production and parsing of linguistic utterances, at least two other systems are directly relevant for communication: the sensory-motor system\is{sensory-motor system} (in a broad sense responsible for dealing with the sensory experience and for building a world model) and the conceptual-intentional system (responsible for conceptualization\is{conceptualization} and interpretation as well as concept\is{concept formation} formation\is{formation}). These three ``systems'' work together in tight interaction and without a clear-cut division between them.
 
@@ -313,10 +316,13 @@ borderscreen & object-1& false & `disappear'\\[.3em]\multirow{2}{*}{move } & \mu
 \section{Baseline experiment 1: no marking}
 \label{s:base1}
 
+\subsection{Overview}
+
 The aforementioned debate on holistic versus compositional languages implicitly assumes a dichotomy between languages that are either holistic\is{holistic versus compositional languages} or compositional in a grammatical way. However,  ``compositional'' does not necessarily mean ``grammatical''. There is at least one additional possibility and that is a language that relies heavily on content words rather than on grammatical constructions. In the extreme case this is an entirely lexical language which also forms the first stage in the experiments reported in this book. The goal of this first baseline experiment is to {\bfseries demonstrate that agents can infer the speaker's intended meaning without using grammar but by exploiting the situatedness\is{situatedness} of the language game\is{language game}}.
 
 \subsection{An inferential coding system}
-
+\subsubsection{Inferential coding}
+\todo{added subsubsection}
 Languages across the world vary a lot as to which aspects of meaning are expressed using grammatical constructions and which are left implicit in the message. Speakers are nevertheless capable of filling in the blanks and reaching communicative success\is{communicative success}. This is possible because language is an inferential coding system\is{inferential coding system} \citep{sperber86relevance} in which the interpreter is assumed to be intelligent enough to infer the correct meaning by using all the possible resources at hand such as the shared context and previous experience. This view is nicely put as follows by \citet[9]{langacker00dynamic}:
 
 \begin{quote}
@@ -476,11 +482,14 @@ Improving communicative success\is{communicative success} in the failed games co
 \section{Baseline experiment 2: specific marking}
 \label{s:base2}
 
+\subsection{Overview}
 Baseline experiment 1 showed how agents can still reach communicative success\is{communicative success} without using grammar. In the second baseline experiment, agents can exploit this ability to autonomously detect whether it might be useful to make changes to their linguistic inventor\is{linguistic inventory}ies in order to optimize communication. The hypothesis investigated here can be formulated as follows: {\bfseries ambiguity\is{ambiguity} or too much cognitive effort\is{cognitive effort} during parsing and interpretation can be a trigger for the invention of functional marker\is{case!case marking}s for optimizing communicative success\is{communicative success}}.
 
 \subsection{Speaker-based innovation}
 \is{innovation}
 
+\subsubsection{Innovation and expansion}
+\todo{added subsubsection}
 
 In baseline experiment 1 the hearer is faced with the cognitive load of figuring out who's doing what in events during each interaction. Moreover, if the context is complex enough it may not be clear which event the speaker was referring to. In this experiment, the agents are therefore endowed with a second key cognitive ability which involves the {\bfseries innovat\is{innovation}ion and expansion} of their language through event-specific marker\is{case!case marking}s. This ability comprises three subparts:
 
@@ -831,10 +840,12 @@ Coupling these results back to natural languages, there are thus two clear quali
 \is{semantic role}
 \label{s:base3}
 
+\subsection{Overview}
 The results of baseline experiment 2 indicate that the agents can reduce the problem of ambiguity\is{ambiguity} and cognitive effort\is{cognitive effort} if they make use of additional marking. However, the proposed innovat\is{innovation}ion strategy requires new marker\is{case!case marking}s to be invented all the time so (a) there is no generalization beyond the known data, and (b) this may lead to an explosion of the inventory size in the long run. Baseline 3 investigates how the same principles of diagnosis and repair\is{learning strategies!repair strategies} in order to reach communicative success\is{communicative success} can lead to generalization. The hypothesis is that {\bfseries analog\is{analogy}ical reasoning over event structure\is{event structure}s can account for an increased generalization and productivity\is{productivity} of case marker\is{case!case marking}s}.
 
 \subsection{Generalization as a side-effect}
-
+\subsubsection{Analogical reasoning}
+\todo{added subsubsection}
 When repair\is{learning strategies!repair strategies}ing a problem of unexpressed variable equal\is{variable equality}ties in the previous baseline experiment, the speaker assessed the repair\is{learning strategies!repair strategies} to be too difficult to learn if the context was too ambiguous. In a more complex simulation, however, one can imagine that ambiguity\is{ambiguity} is rather the rule than the exception so the speaker needs to innovat\is{innovation}e in a more clever way to give the hearer additional clues about what he meant. One such strategy is to reuse\is{reuse} existing items as much as possible in semantically related or analog\is{analogy}ous situations. In baseline experiment 3, the speaker can reuse\is{reuse} the existing marker\is{case!case marking}s in new situations by performing analog\is{analogy}ical reasoning over event structure\is{event structure}s. The analog\is{analogy}y algorithm comprises the following steps:
 
 \begin{enumerate}
@@ -1328,7 +1339,7 @@ In the simulations, analog\is{analogy}y is the source of generalization and incr
 \end{table}
 
 
-\subsubsection{Analogy all the way}
+% \subsubsection{Analogy all the way}
 \is{analogy}
  Evidence from natural languages suggests that analog\is{analogy}y is also responsible for the first innovat\is{innovation}ion by recruiting an existing lexical entr\is{lexical entry}y for a more grammatical use instead of inventing a new marker\is{case!case marking} (see \sectref{s:stage2}). Additional experiments are thus needed in which the innovat\is{innovation}ion strategies of baseline experiments 2 and 3 are combined into one. The recruitment of existing and well-entrench\is{entrenchment}ed lexical entr\is{lexical entry}ies would naturally follow from the same assumption\is{assumption}s that language is an inferential coding system\is{inferential coding system} and that speakers and hearers will exploit whatever resources that are available for solving communicative problems: using a convention\is{convention}alized linguistic unit has the major advantage that it offers the hearer a strong grounding point for inferring the meaning or function of the innovat\is{innovation}ion. In the present experiments, the new marker\is{case!case marking}s do not contain any clues about what their source events were, so this may differ strongly from agent to agent which explains why the hearer can't retrieve the analog\is{analogy}y in all cases. In the abstraction\is{abstraction}s and scaffold\is{scaffold}s of the present set-up, however, this poses no problems.
 

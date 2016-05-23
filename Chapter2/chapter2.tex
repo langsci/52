@@ -3,6 +3,7 @@
 \chapter{Processing case and argument structure}
 \label{c:ar}
 
+\section{Introduction}
 The mathematical properties of case and argument structure have been extensively studied in the tradition of formal grammars such as Combinatorial Categorial Grammar \citep[CCG;][]{steedman00syntactic}, Lexical-Functional Grammar \citep[LFG;][]{bresnan82mental} and Head-driven Phrase Structure Grammar \citep[HPSG;][]{sag94hpsg}. The focus of those studies has been the development of {\em competence models} (i.e. knowledge representations), thereby treating {\em linguistic processing} as a problem that can be dealt with separately. However, if our artificial agents have to use their linguistic knowledge in communicative interactions, we need a strong integration of both processing and competence.
 
 One family of linguistic theories that is particularly interesting for achieving such an integration is {\em construction grammar}, because it is explicitly concerned with how meanings can be mapped onto forms and vice versa. Unfortunately, {\em computational} construction grammars are scarcely out of the egg: the formalizations of Construction Grammar \citep[CxG;][]{kay99grammatical} and Sign-Based Construction Grammar \citep[SBCG;][]{boas13sbcg} have not actually been implemented (yet), and Embodied Construction Grammar \citep[ECG\is{Embodied Construction Grammar},][]{bergen05embodied} only has a parsing model but cannot handle production.
@@ -76,6 +77,7 @@ $\exists$ ?object-a, ?object-b, ?object-c, ?event-x: jack(?object-a) $\wedge$ fl
 
 \section{A brief introduction to Fluid Construction Grammar}
 
+\subsection{Overview}
 \begin{figure}
 \centerline{\includegraphics[width=0.8\linewidth]{Chapter2/figs/reaction-network}}
   \caption[A reaction network\is{reaction network}]{During processing, the language user builds up a reaction network\is{reaction network} by trying out constructions. The pathway with the highest confidence\is{confidence} scores is selected for producing or parsing an utterance.}
@@ -165,6 +167,7 @@ It should be noted that the above tree-like representation of hierarchical struc
 
 \section{Parsing `Jack sweep dust off-floor'}
 
+\subsection{Overview}
 With the meaning representation and FCG\is{construction grammar!Fluid Construction Grammar} overview in mind, we can now dive into more details of the operationalization. This section illustrates parsing using the sentence {\em Jack sweep dust off- floor} is parsed, which is a simplification of the sentence {\em Jack sweeps the dust off the floor}. Obviously, this section does not provide a description of an actual English utterance, but only highlights the problem of argument realization while ignoring issues such as agreement, determination, and so on.
 
 At the beginning of the parsing process, the FCG-system creates a first node in a reaction network\is{reaction network}, which is a coupled feature structure\is{feature structure!coupled feature structure} with an empty semantic and syntactic pole. I assume here that the utterance is segmented into the separate strings ``jack'', ``sweep'', ``dust'', ``off-'' and ``floor''. These strings are all lumped together along with the observed word order\is{word order} (i.e. the `meets'-constraints) into the form-feature of one unit on the syntactic pole, which I will call the top-unit. The label `top-unit' is arbitrary but makes interpretation easier for human readers. On  the semantic pole, the corresponding unit (also called `top-unit') is still empty:
@@ -523,6 +526,7 @@ As can be seen in the meaning, all variables that refer to the same referent hav
 
 \section{Producing `jack sweep floor'}
 
+\subsection{Overview}
 This section gives an overview of how an utterance such as {\em jack sweep floor} can be produced in Fluid Construction Grammar\is{construction grammar!Fluid Construction Grammar}. In this case, the cause\is{causality}d motion construction\is{construction!caused motion construction} is not used, but a construction which maps the semantic frame\is{frame!semantic frame} `X acts on surface Y' onto the syntactic frame\is{frame!syntactic frame} `Subject-Verb\is{verb}-Object'. The speaker starts with the following meaning (in which NIL stands for `empty' or `not profiled\is{event profile}'):
 
 \ea
