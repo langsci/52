@@ -179,9 +179,9 @@ At the beginning of the parsing process, the FCG-system creates a first node in 
  <==>
  ((top-unit
    (form 
-      ((string jack-unit ``jack'') (string sweep-unit ``sweep'')
-       (string dust-unit ``dust'') (string off-unit ``off-'')
-       (string floor-unit ``floor'') (meets jack-unit sweep-unit)
+      ((string jack-unit "jack") (string sweep-unit "sweep")
+       (string dust-unit "dust") (string off-unit "off-")
+       (string floor-unit "floor") (meets jack-unit sweep-unit)
        (meets sweep-unit dust-unit) (meets dust-unit off-unit)
        (meets off-unit floor-unit)))))> 
 \end{lstlisting}
@@ -202,14 +202,14 @@ In the next step, the FCG-system performs a lexical look-up for all the words in
    (sem-cat animate\is{animacy}-object)))
  <==>
  ((?top-unit
-   (form (== (string ?new-unit ``jack''))))
+   (form (== (string ?new-unit "jack"))))
  ((J ?new-unit ?top-unit)
    (syn-cat (== (pos noun\is{noun})))))>}}
 \end{lstlisting}
 \z
 
 
-Note that the lexical entr\is{lexical entry}y for {\em jack} contains variable\is{logic variable}s not only for the meaning but also for the unit-names. The unification\is{unification} engine of FCG\is{construction grammar!Fluid Construction Grammar} can use these variable\is{logic variable}s to match them against the unit-structure of the current node in the reaction network\is{reaction network}. Since we're in parsing mode, the right pole of the entry (under the directional marker {\tt <==>}) needs to be unified with the right-pole of node-1. The right pole specifies that there has to be some unit ({\tt ?top-unit}) which must contain the feature {\tt form}, which itself must contain in its value the feature-value {\tt (string ?new-unit ``jack'')}. These constraints are indeed satisfied: the variable {\tt ?top-unit} can be bound to the unit {\tt top-unit} in the current node because it fulfills all the necessary conditions.
+Note that the lexical entr\is{lexical entry}y for {\em jack} contains variable\is{logic variable}s not only for the meaning but also for the unit-names. The unification\is{unification} engine of FCG\is{construction grammar!Fluid Construction Grammar} can use these variable\is{logic variable}s to match them against the unit-structure of the current node in the reaction network\is{reaction network}. Since we're in parsing mode, the right pole of the entry (under the directional marker {\tt <==>}) needs to be unified with the right-pole of node-1. The right pole specifies that there has to be some unit ({\tt ?top-unit}) which must contain the feature {\tt form}, which itself must contain in its value the feature-value {\tt (string ?new-unit "jack")}. These constraints are indeed satisfied: the variable {\tt ?top-unit} can be bound to the unit {\tt top-unit} in the current node because it fulfills all the necessary conditions.
 
 Since unification\is{unification} is successful, the left pole, which contains the meaning of the lexical entr\is{lexical entry}y, can be merged with the left pole of node-1. The units that are marked with the J-operator\is{structure building!J-operator} were ignored during the unification\is{unification} phase, but are now integrated: the J-operator\is{structure building!J-operator} pulls the lexical information for {\em jack} down into a new unit and specifies that this new-unit is a sub-unit of the top-unit. The J-operator\is{structure building!J-operator} also merges additional features with this new unit concerning its referent and its semantic and syntactic categorization. One could devise many other categorizations and features for {\em jack}, but they are not necessary for understanding the example here so they are left out for convenience's sake.
 
@@ -228,12 +228,12 @@ Since both unification\is{unification} and merge were successful, a new node is 
  ((top-unit
    (syn-subunits (jack-unit))
    (form 
-      ((string sweep-unit ``sweep'') (string dust-unit ``dust'') 
-      (string off-unit ``off-'') (string floor-unit ``floor'') 
+      ((string sweep-unit "sweep") (string dust-unit "dust") 
+      (string off-unit "off-") (string floor-unit "floor") 
       (meets jack-unit sweep-unit) (meets sweep-unit dust-unit) 
       (meets dust-unit off-unit) (meets off-unit floor-unit))))
  (jack-unit
-   (form ((string jack-unit ``jack'')))
+   (form ((string jack-unit "jack")))
    (syn-cat ((pos noun\is{noun})))))> 
 \end{lstlisting}
 \z
@@ -251,7 +251,7 @@ The lexical entr\is{lexical entry}ies for {\em dust} and {\em floor} look almost
    (sem-cat moveable-object)))
  <==>
  ((?top-unit
-   (form (== (string ?new-unit ``dust''))))
+   (form (== (string ?new-unit "dust"))))
  ((J ?new-unit ?top-unit)
    (syn-cat (== (pos noun\is{noun})))))> 
  
@@ -263,7 +263,7 @@ The lexical entr\is{lexical entry}ies for {\em dust} and {\em floor} look almost
    (sem-cat surface-object)))
  <==>
  ((?top-unit
-   (form (== (string ?new-unit ``floor''))))
+   (form (== (string ?new-unit "floor"))))
  ((J ?new-unit ?top-unit)
    (syn-cat (== (pos noun\is{noun})))))>}}\\
 \end{lstlisting}
@@ -288,7 +288,7 @@ The lexical entr\is{lexical entry}y for {\em sweep}, however, is a bit more comp
                   (sem-role-source ?unit-d ?obj-z)))))
  <==>
  ((?top-unit
-   (form (== (string ?new-unit ``sweep''))))
+   (form (== (string ?new-unit "sweep"))))
  ((J ?new-unit ?top-unit)
    (syn-cat (== (pos verb\is{verb})))
    (syn-frame (== (syn-role-subject ?unit-1)
@@ -345,23 +345,23 @@ Unifying and merging the lexical entr\is{lexical entry}ies for {\em sweep}, {\em
  ((top-unit
    (syn-subunits (jack-unit sweep-unit dust-unit floor-unit))
    (form 
-     ((string off-unit ``off-'') (meets jack-unit sweep-unit)
+     ((string off-unit "off-") (meets jack-unit sweep-unit)
       (meets sweep-unit dust-unit) (meets dust-unit off-unit)  
       (meets off-unit floor-unit))))
  (jack-unit
-   (form ((string jack-unit ``jack'')))
+   (form ((string jack-unit "jack")))
    (syn-cat ((pos noun\is{noun}))))
  (sweep-unit
-   (form ((string sweep-unit ``sweep'')))
+   (form ((string sweep-unit "sweep")))
    (syn-cat ((pos verb\is{verb})))
    (syn-frame ((syn-role-subject ?unit-1)
                (syn-role-object ?unit-2)
                (syn-role-oblique ?unit-3))))
  (dust-unit
-   (form ((string dust-unit ``dust'')))
+   (form ((string dust-unit "dust")))
    (syn-cat ((pos noun\is{noun}))))
  (floor-unit
-   (form ((string floor-unit ``floor'')))
+   (form ((string floor-unit "floor")))
    (syn-cat ((pos noun\is{noun})))))>}}
 
 \end{lstlisting}
@@ -399,7 +399,7 @@ The morphological rule itself looks as follows:
    (syn-role syn-role-oblique)))
  <==>
  ((?top-unit
-   (form (== (string ?marker-unit ``off-'')
+   (form (== (string ?marker-unit "off-")
             (meets ?marker-unit ?some-unit))))
  ((J ?marker-unit ?top-unit))
  ((J ?some-unit ?top-unit (?marker-unit))))>}}
@@ -491,26 +491,26 @@ Thanks to the word-order constraints, the construction can unambiguously bind th
           (meets sweep-unit dust-unit)
           (meets dust-unit off-unit)))) 
  (jack-unit
-   (form ((string jack-unit ''jack'')))
+   (form ((string jack-unit "jack")))
    (syn-role syn-role-subject)
    (syn-cat ((pos noun\is{noun}))))
  (sweep-unit
-   (form ((string sweep-unit ''sweep'')))
+   (form ((string sweep-unit "sweep")))
    (syn-cat ((pos verb\is{verb})))
    (syn-frame ((syn-role-subject jack-unit)
                (syn-role-object dust-unit)
                (syn-role-oblique foor-unit))))
  (dust-unit
-   (form ((string dust-unit ''dust'')))
+   (form ((string dust-unit "dust")))
    (syn-role syn-role-object)
    (syn-cat ((pos noun\is{noun}))))
  (floor-unit
    (syn-subunits (off-unit))
-   (form ((string floor-unit ''floor'')))
+   (form ((string floor-unit "floor")))
    (syn-role syn-role-oblique)
    (syn-cat ((pos noun\is{noun}))))
  (off-unit
-   (form ((string off-unit ''off-'') 
+   (form ((string off-unit "off-") 
           (meets off-unit floor-unit)))))>}}
 
 \end{lstlisting}
@@ -582,16 +582,16 @@ Next, the speaker builds new nodes in the network by unify\is{unify and merge}in
  ((top-unit
    (syn-subunits (jack-unit sweep-unit floor-unit)))
  (jack-unit
-   (form ((string jack-unit ''jack'')))
+   (form ((string jack-unit "jack")))
    (syn-cat ((pos noun\is{noun}))))
  (sweep-unit
-   (form ((string sweep-unit ''sweep'')))
+   (form ((string sweep-unit "sweep")))
    (syn-cat ((pos verb\is{verb})))
    (syn-frame ((syn-role-subject ?unit-1)
                (syn-role-object ?unit-2)
                (syn-role-oblique ?unit-3))))
  (floor-unit
-   (form ((string floor-unit ''floor'')))
+   (form ((string floor-unit "floor")))
    (syn-cat ((pos noun\is{noun})))))>}}
 
 \end{lstlisting}
@@ -667,17 +667,17 @@ First the speaker tries to unify\is{unify and merge} the semantic pole with that
    (form ((meets jack-unit sweep-unit) 
          (meets sweep-unit floor-unit))))
  (jack-unit
-   (form ((string jack-unit ''jack'')))
+   (form ((string jack-unit "jack")))
    (syn-role syn-role-subject)
    (syn-cat ((pos noun\is{noun}))))
  (sweep-unit
-   (form ((string sweep-unit ''sweep'')))
+   (form ((string sweep-unit "sweep")))
    (syn-cat ((pos verb\is{verb})))
    (syn-frame ((syn-role-subject jack-unit)
                (syn-role-object floor-unit)
                (syn-role-oblique ?unit-3))))
  (floor-unit
-   (form ((string floor-unit ''floor'')))
+   (form ((string floor-unit "floor")))
    (syn-role syn-role-object)
    (syn-cat ((pos noun\is{noun})))))>}}
 

@@ -6,7 +6,7 @@
 
 \section{Introduction}
 The baseline experiments of the previous chapter looked at how analog\is{analogy}y could be exploited for the generalization of case marker\is{case!case marking}s for covering semantic roles. The experiments focused on the development of these semantic roles in isolation of each other in order to identify the diagnostic\is{learning strategies!diagnostics}s, repair\is{learning strategies!repair strategies}s and alignment strateg\is{alignment strategy}ies that make the emergence\is{formation} of such roles possible. However, the behaviour and functionality of case marker\is{case!case marking}s can only be fully understood when they are studied in relation to the other elements in their linguistic context. In other words: case marker\is{case!case marking}s have to be investigated in relation to the patterns in which they occur. This chapter therefore presents experiments in which case marker\is{case!case marking}s can be combined in larger patterns.
-
+ 
 The next section first gives a brief overview of pattern formation\is{formation}\is{pattern formation} in language and operationalizes one strategy of pattern formation\is{pattern formation} in the form of diagnostic\is{learning strategies!diagnostics}s, repair\is{learning strategies!repair strategies}s and alignment strateg\is{alignment strategy}ies. \sectref{s:pattern-exp-1} implements this operationalization and shows that the ``systematicity\is{systematicity}'' of the artificial languages gets lost once smaller linguistic units are starting to combine into larger patterns. In this section I will also briefly discuss other experiments in the field in which the problem of systematicity\is{systematicity} occurs but is either overlooked or misinterpreted by the experimenter. The next section then presents the results of another experiment that uses the more complex alignment strateg\is{alignment strategy}y of multi-level selection\is{multi-level selection} to overcome this problem. Three variation\is{variation}s of multi-level selection\is{multi-level selection} are implemented and compared to each other in terms of systematicity\is{systematicity} and coherence. The insights of these experiments are ported to experiments involving analog\is{analogy}y and the formation\is{formation} of semantic roles in \sectref{s:pattern-exp-3}. \sectref{s:pattern-exp-4} finally offers a first step towards simulations involving the formation\is{formation} of syntactic cases (corresponding to stage 3 in \sectref{s:stage3}). Even though stage 3 is not fully accomplished yet, this section offers a clear idea of the work that needs to be undertaken in order to form syntactic cases.
 
 \section{Pattern formation}
@@ -27,8 +27,7 @@ In the following subsection I will briefly touch upon some phenomena of grammati
 \subsection{Pattern formation in language}
 \is{pattern formation}
 
-\subsubsection{Negation in French}
-\todo{added subsubsection}
+\subsubsection{Negation in French} 
 A very good example of the development of a lexical item into a part of a grammatical structure can be found in French\is{French} negation\is{negation}. Traditionally, the development of negation\is{negation} particles (also known as ``Jespersen's cycle\is{Jespersen's cycle}'') is defined in terms of a cycle of reanalysis\is{reanalysis} -- analog\is{analogy}y (generalization) -- reanalysis\is{reanalysis} \cite[65--66]{hopper93grammaticalization}:
 
 \begin{enumerate}  \item[1.]   Negation in French\is{French} originally only involved {\em ne} before the verb\is{verb}:
@@ -158,6 +157,7 @@ Suppose that the agent is in production mode. In this case node-1 is the coupled
    \label{f:new-pattern}
 \end{figure}
 
+\newpage
 The new construction is stored in the linguistic inventor\is{linguistic inventory}y with information about its origins: the agents keep a link between the new pattern and the constructions that were used for creating it. If the speaker has to produce the same meaning again, the new construction now forms an alternative path in the reaction network\is{reaction network}. The speaker will prefer this new path because it is faster in processing (one step can be skipped) and the links between the constructions can be used for giving priority to larger constructions if they unify\is{unify and merge} and merge. This new reaction network\is{reaction network} is illustrated in \figref{f:reaction2}.
 
 \begin{figure}
@@ -167,6 +167,7 @@ The new construction is stored in the linguistic inventor\is{linguistic inventor
 \end{figure}
 
 Apart from creating the new pattern, not much needs to be changed in the linguistic inventor\is{linguistic inventory}y apart from the fact that the agents have to link the new construction to the lexical entries that are compatible with it. The agents will not do this in one sweep but postpone this task until processing: lexical entries are only linked to the new construction instance by instance if this is required during a language game\is{language game}. The mechanism works entirely the same: the agent wants to unify\is{unify and merge} and merge two constructions and wants to optimize processing by creating a pattern. This time, however, no new pattern needs to be created because there is already one. The pattern thus exten\is{extension}ds its use to a new verb\is{verb} as well. The newly-made construction looks as follows:
+\largerpage[-1]
 
 \begin{lstlisting}
 <Construction: construction-3
@@ -273,13 +274,14 @@ jill approach-2 jack approach-1 approach\\
 \glt `Jack approaches Jill'.\\
 \z
 
+\newpage
+\figref{f:1-coherence-7000} shows that after 7.000 language game\is{language game}s, the agents have almost converged on a form for every meaning, but the problem of systematicity\is{systematicity} remains: in half of the cases, a different case marker\is{case!case marking} is winning the competit\is{competition}ion on the level of single-argument constructions than the one(s) winning on the other levels. The figure also shows that in most of the cases where there is no systematic use of a form for the same meaning, convergence is also still not complete. This is in contrast to the meanings which (accidentally) arrived at the same form across constructions. Here we see mostly black circles meaning that all agents prefer the same convention\is{convention}.
+
 \begin{figure}[p]
 \centerline{\includegraphics[width=0.7\textwidth]{Chapter4/figs/direct-coherence-no-analogy-7000}}
   \caption[Experiment 1: snapshot after 7.000 games]{This diagram gives a snapshot of the average coherence in a population\is{speech population} of 10 agents after 7.000 language game\is{language game}s using the direct selection alignment strateg\is{alignment strategy}y. The agents have reached convergence for most meanings by now, but these form-meaning mappings are not always systematically related to each other. For example, the meanings related to 49 were pretty consistent in their meaning-form mappings after 1.000 games, but have now become totally unrelated to each other: for each possible combination a new form is introduced to cover the same meaning. In all the cases where there is no systematicity\is{systematicity}, the convergence is not complete yet.}
    \label{f:1-coherence-7000}
 \end{figure}
-
-\figref{f:1-coherence-7000} shows that after 7.000 language game\is{language game}s, the agents have almost converged on a form for every meaning, but the problem of systematicity\is{systematicity} remains: in half of the cases, a different case marker\is{case!case marking} is winning the competit\is{competition}ion on the level of single-argument constructions than the one(s) winning on the other levels. The figure also shows that in most of the cases where there is no systematic use of a form for the same meaning, convergence is also still not complete. This is in contrast to the meanings which (accidentally) arrived at the same form across constructions. Here we see mostly black circles meaning that all agents prefer the same convention\is{convention}.
 
 
 \subsubsection{Discussion}
@@ -384,7 +386,7 @@ The three alignment strateg\is{alignment strategy}ies were compared to each othe
 
 
 \subsubsection{Results}
-\begin{figure}[b]
+\begin{figure}[t]
 \centerline{\includegraphics[width=\textwidth]{Chapter4/figs/systematicity-vs-2}}
   \caption[Experiment 2: systematicity]{This graph compares the performance\is{performance} in terms of systematicity\is{systematicity} of four experimental set-ups. systematicity\is{systematicity} fluctuates around 50\% in the baseline case where there is only individual selection (experiment 1). With the bottom-up selection strategy the agents improve the systematicity\is{systematicity} rate to 80\% but then get stuck. Top-down selection leads to full systematicity\is{systematicity} in some of the runs, but most of the simulations feature some `frozen accidents' as well. Only the multi-level selection\is{multi-level selection} strategy leads to full systematicity\is{systematicity} in all the series after about 7.000 language game\is{language game}s.}
    \label{f:systematicity2}
@@ -392,7 +394,7 @@ The three alignment strateg\is{alignment strategy}ies were compared to each othe
 
  \figref{f:systematicity2} illustrates the amount of systematicity\is{systematicity} in all four alignment strateg\is{alignment strategy}ies. The graph shows that the three alignment strateg\is{alignment strategy}ies involving multiple levels all improve on the baseline of individual selection of experiment 1. With the alignment strateg\is{alignment strategy}y of individual selection, systematicity\is{systematicity} fluctuates between 40 and 60\% depending on how `lucky' the agents were. The behaviour of the other three strategies is much more consistent over the ten series. The graph shows that bottom-up selection allows the agents to improve systematicity\is{systematicity} to 80\% but there they are faced with `frozen accidents' as well. The top-down selection improves systematicity\is{systematicity} even further and allows the agents to reach full systematicity\is{systematicity} in some of the runs. However, in most cases, there were still two or three unsystematic patterns left. Only the multi-level selection\is{multi-level selection} strategy led to full systematicity\is{systematicity} in all the simulations.
 
-\begin{figure}[b]
+\begin{figure}[t]
 \centerline{\includegraphics[width=\textwidth]{Chapter4/figs/coherence-vs-2}}
   \caption[Experiment 2: meaning-form coherence]{Since the systematicity\is{systematicity} graph only takes the most frequent forms into account, meaning-form coherence has to be checked in order to verify whether all the agents have converged on the same form-meaning pairs. We see that after 10.000 language game\is{language game}s, only the top-down and the multi-level selection\is{multi-level selection} alignment strateg\is{alignment strategy}ies have already reached complete coherence. Multi-level selection\is{multi-level selection} slightly outperforms top-down selection but not significantly so. In the case of bottom-up and individual selection, the agents need additional language game\is{language game}s for reaching coherence.}
    \label{f:coherence2}
@@ -400,17 +402,17 @@ The three alignment strateg\is{alignment strategy}ies were compared to each othe
 
 Since the measure of systematicity\is{systematicity} only looks at the most frequent forms floating in a population\is{speech population}, it needs to be complemented with meaning-form coherence to verify whether {\em all} the agents converge on the same preferences. \figref{f:coherence2} therefore compares the performance\is{performance} of the four alignment strateg\is{alignment strategy}ies in terms of coherence. From the results of experiment 1 we already knew that in the case of individual selection, alignment takes longer than 10.000 language game\is{language game}s. The coherence line for bottom-up selection runs almost parallel with it and does not improve on it in terms of convergence speed. The only two strategies that reach convergence within 10.000 games are top-down and multi-level selection\is{multi-level selection}. Full coherence in the case of top-down selection however does not mean full systematicity\is{systematicity}, as was shown in \figref{f:systematicity2}.
 
-\begin{figure}[b]
+\begin{figure}[t]
 \centerline{\includegraphics[width=0.87\textwidth]{Chapter4/figs/size2d}}
   \caption[Experiment 2: number of constructions with multi-level selection\is{multi-level selection}]{This graph shows the average number of constructions known by an agent using the multi-level selection\is{multi-level selection} alignment strateg\is{alignment strategy}y. Compared to individual selection, multi-level selection\is{multi-level selection} allows the agents to discard competit\is{competition}ors much more rapidly: there are significantly less variation\is{variation}s floating around in the population\is{speech population}. For example, the peak of single-argument constructions is about 60 instead of 80 in experiment 1. Also the alignment phase happens much faster.}
    \label{f:size2d}
 \end{figure}
 
 
-
-\largerpage
+ 
 \figref{f:size2d} shows the average number of constructions in the ten series involving the alignment strateg\is{alignment strategy}y of multi-level selection\is{multi-level selection}. The graph confirms the fact that the agents converge significantly faster on an optimal number of constructions than in experiment 1. At the peak of competing constructions, there are about 60 single-argument constructions, 30 two-argument constructions and 6 three-argument constructions or an average of two competing constructions for each possible meaning. This is much less than in experiment 1 (see \figref{f:size1}) which featured peaks of 80 single-argument, 50 two-argument and 10 three-argument constructions. Also alignment happens much faster: with multi-level selection\is{multi-level selection}, the agents align after 6.000 games as opposed to 14.000 language game\is{language game}s or more if the agents use individual selection.
 
+\largerpage[-2]
 Figures \ref{f:2d-coherence-1000} and \ref{f:2d-coherence-7000} offer a snapshot of the most frequent forms in a population\is{speech population} using the multi-level selection\is{multi-level selection} alignment strateg\is{alignment strategy}y. Both snapshots confirm the results indicated by the coherence and systematicity\is{systematicity} graphs. \figref{f:2d-coherence-1000} shows already much more dark grey circles than \figref{f:1-coherence-1000} featuring individual selection, indicating that for most meanings there is already a majority of agents preferring the same form. The preferred forms are also to a higher degree systematically related to each other than in experiment 1, even for the more complex patterns. All black circles in the Figure feature meanings which are related to other meanings, which suggests that multi-level selection\is{multi-level selection} indeed favours groups of related items. The snapshot in \figref{f:2d-coherence-7000} only shows black circles, which means that all agents in the population\is{speech population} prefer the same form for that particular meaning. There are also only full lines between the circles indicating that the same case marker\is{case!case marking}s are consistently used across patterns. This result significantly improves over the earlier results with individual selection.
 
 \begin{figure}[p]
@@ -489,7 +491,7 @@ In this section, the first four set-ups are again compared to each other to demo
 
 The four set-ups also confirm the results of experiment 2 in terms of coherence. \figref{f:coherence3} shows that bottom-up selection and individual selection again run almost parallel in terms of convergence. This time the agents reach coherence faster because of the smaller variation\is{variation} space. Multi-level and top-down selection also perform equally well and reach coherence between 6.000 and 8.000 language game\is{language game}s.
 
-\begin{figure}[t]
+\begin{figure}[b]
 \centerline{\includegraphics[width=\textwidth]{Chapter4/figs/markers3}}
   \caption[Experiment 3: number of markers]{This graph shows the average number of marker\is{case!case marking}s known by each agent using the strategy of multi-level selection\is{multi-level selection} with lateral inhibition\is{lateral inhibition} (the fourth set-up of experiment 3). The results show that the generalization rate of the agents is not impressive: only 3--5 semantic roles survive the competit\is{competition}ion as opposed to 18--25 specific marker\is{case!case marking}s.}
    \label{f:markers3}
@@ -523,6 +525,7 @@ Here is a list of marker\is{case!case marking}s and the participant roles they c
 \item {\em -fen:} distance-decreasing-1
 \item {\em -rem:} distance-decreasing-2
 \item {\em -gaeh:} move-outside-2
+\largerpage
 \item {\em -wupu:} cause-move-on-1
 \item {\em -chuiw:} cause-move-on-2
 \item {\em -nuip:} cause-move-on-3
@@ -642,6 +645,7 @@ A comparison of the semantic roles of both agents also shows that they do not al
 
 An interesting side-effect of the innovat\is{innovation}ion algorithm is that there are two syntactic roles which cover almost exclusively semantic roles while a third role acts as a waste basket category for three participant roles which are all three part of events featuring three participants. This maps onto the distinction between agents and patients (and subject\is{syntactic role!subject}s and object\is{syntactic role!object}s) that is made by most of the languages in the world. Most theories of language assume a (near-)universal distinction between agents and patients to be given (either based on a universal conceptual space or on Universal Grammar\is{Universal Grammar}). This first tentative experiment suggests an alternative hypothesis: the distinction could emerge as a side-effect of communicative goals because language users want to make grammatically and communicatively relevant distinctions. In most of the cases, two or three syntactic roles suffice. The exten\is{extension}sion of case marker\is{case!case marking}s and the merger of semantic role could thus spontaneously lead to `core' cases.
 
+\newpage 
 A final remark considering the two-agent simulation is that there is no gain in terms of inventory size with respect to larger constructions. This is due to the fact that only a couple of constructions share the same semantic roles which combine into the same larger construction. As I suggested during the discussion of experiment 3, the newly formed patterns themselves should be considered by the analog\is{analogy}y as well. This could further increase the generalization and productivity\is{productivity} rate of the agents and could be an additional drive towards a prototypical agent-patient distinction.
 \\
 \\

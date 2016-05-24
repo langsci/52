@@ -12,7 +12,10 @@ In this Chapter I will present three baseline experiments which first replicate 
 \section{Experimental set-up}
 
 \subsection{Overview}
-\begin{table}[t]
+
+The simulations in this book investigate how a population\is{speech population} of artificial agents can autonomously construct a shared grammatical system for marking event structure\is{event structure} (in the form of a case grammar\is{case!case grammar}). As argued in \sectref{s:methodology}, we need to hypothesize which cognitive mechanisms and external pressures are the minimal ingredients that enable the agents to do so, and we need to operationalize them into computational processes and a world environment. Since case marking\is{case!case marking} is a complex phenomenon, I will divide the topic into several subparts that follow the stages of development identified in \sectref{s:case-markers}.
+
+\begin{table} 
 % \centerline{\includegraphics[width=\linewidth]{Chapter3/figs/repairs}}
 
 \begin{tabular}[c]{p{2.5cm}ccc}
@@ -26,14 +29,11 @@ In this Chapter I will present three baseline experiments which first replicate 
 \raggedright Baseline experiment 3 & \cellcolor[gray]{0.9}\raisebox{-.5\height}{$+$} & \cellcolor[gray]{0.9}\raisebox{-.5\height}{$+$} &\cellcolor[gray]{0.9}\raisebox{-.5\height}{$+$}\\
  \lspbottomrule
 \end{tabular}
-
-
-
+ 
 \caption[Key cognitive abilities in the baseline experiments]{This table shows the key cognitive abilities which are given to the agents in the baseline experiments. In the first experiment, agents are ``intelligent'' enough to resolve variable equal\is{variable equality}ities by using their world model but they cannot express these equal\is{variable equality}ities in their language. In experiment 2, the agents can decide to invent new marker\is{case!case marking}s to indicate the linking of equal\is{variable equality} variables but they cannot generalize or abstract. In the third experiment, the agents can perform analog\is{analogy}ical reasoning over event structure\is{event structure}s to generalize existing marker\is{case!case marking}s.}
 \label{t:repairs}
 \end{table}
 
-The simulations in this book investigate how a population\is{speech population} of artificial agents can autonomously construct a shared grammatical system for marking event structure\is{event structure} (in the form of a case grammar\is{case!case grammar}). As argued in \sectref{s:methodology}, we need to hypothesize which cognitive mechanisms and external pressures are the minimal ingredients that enable the agents to do so, and we need to operationalize them into computational processes and a world environment. Since case marking\is{case!case marking} is a complex phenomenon, I will divide the topic into several subparts that follow the stages of development identified in \sectref{s:case-markers}.
 
 \subsection{Key abilities and self-assessment criteria}
 
@@ -49,7 +49,7 @@ The baseline experiments reported in this Chapter first of all replicate the two
 \item In baseline experiment 3 (corresponding to stage 3 -- \sectref{s:stage3}), agents are endowed with the capacity to perform analog\is{analogy}ical reasoning over event structure\is{event structure}s. They can exploit this capacity for generalizing existing marker\is{case!case marking}s to cover new participant role\is{participant role}s. As I will show later, generalization is not a goal in itself but rather a side-effect of the need for optimizing communication.
 \end{enumerate}
 
-\newpage
+
 These key cognitive abilities will be explained in more detailed along with the experiments further down in this Chapter. The abilities are each time given and fixed by the experimenter and the simulations do not explain where they come from. However, the global vision underlying this work is that speakers and hearers can autonomously configure their language capacity by recruiting cognitive mechanisms that are also used for other tasks such as hierarchy\is{hierarchy} building operators \citep{steels07recruitment}. This process is driven by needs in communicative success\is{communicative success}, expressive power and the convention\is{convention}s adopted by other agents in the population\is{speech population}. Here again, agents have to be capable of self-assess\is{self-assessment}ing when to recruit a mechanism, which ones are the best candidates, and to self-regulate the semantic complexity of their communication. For simulations that investigate self-regulation and reconfiguration of the language faculty\is{language faculty} on the longer run, see \citet{steels06how-grammar, steels07scaffolding}. In the remainder of this section, I will describe those aspects of the simulations which are shared by all the experiments.
 
 \subsection{Description games}
@@ -321,8 +321,7 @@ borderscreen & object-1& false & `disappear'\\[.3em]\multirow{2}{*}{move } & \mu
 The aforementioned debate on holistic versus compositional languages implicitly assumes a dichotomy between languages that are either holistic\is{holistic versus compositional languages} or compositional in a grammatical way. However,  ``compositional'' does not necessarily mean ``grammatical''. There is at least one additional possibility and that is a language that relies heavily on content words rather than on grammatical constructions. In the extreme case this is an entirely lexical language which also forms the first stage in the experiments reported in this book. The goal of this first baseline experiment is to {\bfseries demonstrate that agents can infer the speaker's intended meaning without using grammar but by exploiting the situatedness\is{situatedness} of the language game\is{language game}}.
 
 \subsection{An inferential coding system}
-\subsubsection{Inferential coding}
-\todo{added subsubsection}
+\subsubsection{Inferential coding} 
 Languages across the world vary a lot as to which aspects of meaning are expressed using grammatical constructions and which are left implicit in the message. Speakers are nevertheless capable of filling in the blanks and reaching communicative success\is{communicative success}. This is possible because language is an inferential coding system\is{inferential coding system} \citep{sperber86relevance} in which the interpreter is assumed to be intelligent enough to infer the correct meaning by using all the possible resources at hand such as the shared context and previous experience. This view is nicely put as follows by \citet[9]{langacker00dynamic}:
 
 \begin{quote}
@@ -378,11 +377,11 @@ Next, the speaker starts a production task which runs entirely as explained in t
  ((top-unit
    (syn-subunits (jack-unit walk-to-unit girl-unit)))
   (jack-unit
-   (form ((string jack-unit ''jack''))))
+   (form ((string jack-unit "jack"))))
   (walk-to-unit
    (form ((string walk-to-unit "walk-to"))))
   (girl-unit
-   (form ((string girl-unit ''girl'')))))>
+   (form ((string girl-unit "girl")))))>
 \end{lstlisting}
 \z
 
@@ -418,11 +417,11 @@ In the original experiments, each unit also had a `goal'-feature in the semantic
    (form ((meets jack-unit walk-to-unit) 
           (meets walk-to-unit girl-unit))))
   (jack-unit
-   (form ((string jack-unit ''jack''))))
+   (form ((string jack-unit "jack"))))
   (walk-to-unit
    (form ((string walk-to-unit "walk-to"))))
   (girl-unit
-   (form ((string girl-unit ''girl'')))))>
+   (form ((string girl-unit "girl")))))>
 \end{lstlisting}
 \z
 
@@ -489,7 +488,6 @@ Baseline experiment 1 showed how agents can still reach communicative success\is
 \is{innovation}
 
 \subsubsection{Innovation and expansion}
-\todo{added subsubsection}
 
 In baseline experiment 1 the hearer is faced with the cognitive load of figuring out who's doing what in events during each interaction. Moreover, if the context is complex enough it may not be clear which event the speaker was referring to. In this experiment, the agents are therefore endowed with a second key cognitive ability which involves the {\bfseries innovat\is{innovation}ion and expansion} of their language through event-specific marker\is{case!case marking}s. This ability comprises three subparts:
 
@@ -631,7 +629,7 @@ The speaker now starts a new production task for the same meaning. In the initia
  ((top-unit
    (syn-subunits (jack-unit walk-to-unit)))
   (jack-unit
-   (form ((string jack-unit ''jack''))))
+   (form ((string jack-unit "jack"))))
   (walk-to-unit
    (form ((string walk-to-unit "walk-to")))))>
 \end{lstlisting}
@@ -659,14 +657,14 @@ Before the repair\is{learning strategies!repair strategies}, this would be the f
    (syn-subunits (jack-unit walk-to-unit)))
   (jack-unit
    (syn-role syn-role-1)
-   (form ((string jack-unit ''jack''))))
+   (form ((string jack-unit "jack"))))
   (walk-to-unit
    (form ((string walk-to-unit "walk-to")))))>
 \end{lstlisting}
 \z
 
 
-\newpage
+
 Next, the speaker can unify\is{unify and merge} and merge the new morph-rule with node-3. The left-pole of the morph-rule (which is syntactic, see \sectref{s:morph-rule}) looks for any unit containing the feature-value pair `(syn-role syn-role-1)' which is indeed present in the syntactic pole of node-3. Next, the right-pole of the morph-rule is merged with the right-pole of node-3:
 
 
@@ -689,9 +687,9 @@ Next, the speaker can unify\is{unify and merge} and merge the new morph-rule wit
   (jack-unit
    (syn-subunits (bo-unit))
    (syn-role syn-role-1)
-   (form ((string jack-unit ''jack''))))
+   (form ((string jack-unit "jack"))))
   (bo-unit
-   (form ((string bo-unit ''-bo'') (meets jack-unit bo-unit))))
+   (form ((string bo-unit "-bo") (meets jack-unit bo-unit))))
   (walk-to-unit
    (form ((string walk-to-unit "walk-to")))))>
 \end{lstlisting}
@@ -845,7 +843,6 @@ The results of baseline experiment 2 indicate that the agents can reduce the pro
 
 \subsection{Generalization as a side-effect}
 \subsubsection{Analogical reasoning}
-\todo{added subsubsection}
 When repair\is{learning strategies!repair strategies}ing a problem of unexpressed variable equal\is{variable equality}ties in the previous baseline experiment, the speaker assessed the repair\is{learning strategies!repair strategies} to be too difficult to learn if the context was too ambiguous. In a more complex simulation, however, one can imagine that ambiguity\is{ambiguity} is rather the rule than the exception so the speaker needs to innovat\is{innovation}e in a more clever way to give the hearer additional clues about what he meant. One such strategy is to reuse\is{reuse} existing items as much as possible in semantically related or analog\is{analogy}ous situations. In baseline experiment 3, the speaker can reuse\is{reuse} the existing marker\is{case!case marking}s in new situations by performing analog\is{analogy}ical reasoning over event structure\is{event structure}s. The analog\is{analogy}y algorithm comprises the following steps:
 
 \begin{enumerate}
@@ -1069,12 +1066,13 @@ This kind of (token) frequency\is{frequency} favours more general constructions:
 
 \subsection{Results and discussion of set-up 3a}
 
-\begin{figure}[ht]
+\begin{figure}[b]
 \centerline{\includegraphics[width=\textwidth]{Chapter3/figs/graph-base3-size3a}}
   \caption[Baseline experiment 3a: number of markers]{In the two-agent simulations, the agents have no problems aligning their inventories since there is no variation\is{variation} in the population\is{speech population}. In ten series of 500 language game\is{language game}s, the agents came up with an average of 6--8 marker\is{case!case marking}s for semantic role\is{semantic role}s and an average of 6-9 marker\is{case!case marking}s for specific participant role\is{participant role}s. The semantic role\is{semantic role}s gather together up to 24 participant role\is{participant role}s out of 30.}
    \label{f:base3-size3a}
 \end{figure}
 
+\largerpage
 \subsubsection{Results}
  The replicating experiment featuring a population\is{speech population} of two agents confirms the results obtained by \citet{steels02simulating, steels04constructivist}. The agents succeed in reusing\is{reuse} existing marker\is{case!case marking}s and generalizing them to semantic role\is{semantic role}s as is shown in \figref{f:base3-size3a} . During ten series of 500 language game\is{language game}s, the agents constructed on average 6 to 8 marker\is{case!case marking}s which could be used for covering at least two participant role\is{participant role}s. In total, up to 24 participant role\is{participant role}s out of 30 were grouped together in more general roles. In each simulation, also 6 to 9 marker\is{case!case marking}s survived which cover specific participant role\is{participant role}s.
 
@@ -1133,6 +1131,7 @@ In the results there is still a fairly large residue of verb\is{verb}-specific m
 \subsubsection{Results}
  In set-up 3b the population\is{speech population} size is increased to 10 agents so there will be more variation\is{variation} among the agents. This is indeed confirmed in \figref{f:base3-size3b} which shows that there are a total of 140 variation\is{variation}s floating in the population\is{speech population} for marking 30 participant role\is{participant role}s. This is an average of 4,7 possible ways for marking each participant role\is{participant role}. This number of possibilities does not drop to 30, which is a first indication that the agents do not converge on a shared set of grammatical marker\is{case!case marking}s. As for the nature of the marker\is{case!case marking}s, the results indicate that there are about 20 marker\is{case!case marking}s that can be used for covering at least two participant role\is{participant role}s whereas there are about 50 specific participant role\is{participant role} marker\is{case!case marking}s as well. The average inventory size of the agents is thus far from optimal.
 
+\largerpage
 \figref{f:base3-effort3b} confirms that the agents do not reach convergence: the meaning-form coherence indicates the degree to which the agents prefer the same case marker\is{case!case marking} for a particular participant role\is{participant role}. As the graph shows, coherence only reaches 40\% which means that the agents use a different marker\is{case!case marking} for the same participant role\is{participant role} in more than half of the language game\is{language game}s. Yet, as the graph also shows, the agents are capable of reaching 100\% communicative success\is{communicative success}  and reducing the cognitive effort\is{cognitive effort} to zero.
 \begin{figure}[t]
 \centerline{\includegraphics[width=\textwidth]{Chapter3/figs/graph-base3-effort3b}}
@@ -1146,10 +1145,9 @@ In the results there is still a fairly large residue of verb\is{verb}-specific m
 
 The lack of convergence on a preferred set of marker\is{case!case marking}s clearly indicates that the proposed alignment strateg\is{alignment strategy}y is insufficient. The reason is that the alignment strateg\is{alignment strategy}y in which each item has its own single confidence\is{confidence} score is best suited for simulations in which there is always a {\em one-to-one} mapping between form and meaning (as was the case in baseline experiment 2). However, when marker\is{case!case marking}s get generalized to cover more than one participant role\is{participant role}, they become polysemous {\em one-to-more} mappings.
 
+\largerpage
 I will go through an example to explain why the single confidence\is{confidence} score cannot be sufficient for polysemous form-meaning mappings. Suppose that an agent knows three marker\is{case!case marking}s: {\em -ma}, {\em -bo} and {\em -li} and that the first two are generalized to cover two roles each whereas {\em -li} is still a verb\is{verb}-specific marker\is{case!case marking}. For convenience's sake, I will not include all the linguistic items involved but treat the marker\is{case!case marking}s as if they were lexical items:
 
-
-\newpage
 
 \ea
 \parbox{\textwidth}{
@@ -1200,7 +1198,7 @@ Suppose now that the agent observes the utterance {\em boy -ma move-inside} in w
 \end{align*}
 }
 \z
-
+ 
 \ea
 \parbox{\textwidth}{
 \begin{align*}
@@ -1241,16 +1239,16 @@ There is thus a constant push-and-pull effect in which marker\is{case!case marki
   \caption[Baseline experiment 3c: success, effort and coherence]{Using the more fine-grained alignment strateg\is{alignment strategy}y, the agents not only succeed in reaching communicative success\is{communicative success} and reducing cognitive effort\is{cognitive effort}, they also converge on a shared set of meaning-form convention\is{convention}s.}
    \label{f:base3-effort3c}
 \end{figure}
-
-\largerpage
+ 
 \subsubsection{Results}
  The results of baseline experiment 3c indicate that the alignment strateg\is{alignment strategy}y of reinforc\is{reinforcement}ement and lateral inhibition\is{lateral inhibition} can lead to convergence if it is applied in a more fine-grained way. This time, the agents not only use communicative success\is{communicative success} as a guidance but also co-occur\is{co-occurrence}rence links: instead of positing one score on the linguistic item as a whole, they now keep a link between co-occur\is{co-occurrence}ring items and assign a confidence\is{confidence} score to that link. In case of success, the score of the link is increased and only scores of competing {\em links} are decreased. In this model, a marker\is{case!case marking} disappears from the linguistic inventor\is{linguistic inventory}y once it has no links to other linguistic items anymore with a confidencescore higher than zero.
 
 \figref{f:base3-size3c} shows that the number of variation\is{variation}s peaks at 70 possible markings for 30 participant role\is{participant role}s. This means that the agents only have to deal with an average of 2,3 competing marker\is{case!case marking}s for each participant role\is{participant role}. Innovation and adoption of marker\is{case!case marking}s stops at about 1.500 language game\is{language game}s after which the agents rapidly converge on a shared set of marker\is{case!case marking}s. The graph also shows that the agents converge on a set of 5 generalized semantic role\is{semantic role} marker\is{case!case marking}s and about 20 verb\is{verb}-specific marker\is{case!case marking}s. This means that the verb\is{verb}-specific marker\is{case!case marking}s managed to win the competit\is{competition}ion more often than generalized marker\is{case!case marking}s and that semantic role\is{semantic role}s on average only cover two participant role\is{participant role}s.
 
+\newpage
 \figref{f:base3-effort3c} shows that fine-grained alignment allows the agents to converge on a shared set of preferences: meaning-form coherence reaches 100\% after 5.000 language game\is{language game}s which corresponds to the moment where the agents have pruned all the variation\is{variation}s down to 30 in \figref{f:base3-size3c}. The agents also reach communicative success\is{communicative success} and manage to reduce the cognitive effort\is{cognitive effort} needed during parsing.
 
-
+\largerpage[-1]
 \subsubsection{Discussion}
  The results show that the fine-grained scoring mechanism suffices to solve the problem of convergence among the agents. However, the gain in inventory optimization is minimal: the agents end up with an average of 25 marker\is{case!case marking}s for 30 participant role\is{participant role}s. Also the benefits of generalization are on the low side with an average of two participant role\is{participant role}s covered by a semantic role\is{semantic role}.
 
@@ -1260,21 +1258,24 @@ To overcome this problem, the agents need another alignment strateg\is{alignment
 
 \subsection{Results and discussion of set-up 3d}
 
-\begin{figure}[ht]
+\subsubsection{Results}
+\largerpage
+
+\begin{figure}[b]
 \centerline{\includegraphics[width=\textwidth]{Chapter3/figs/graph-base3-success3d}}
   \caption[Baseline experiment 3d: number of markers]{When adapting their linguistic behaviours to frequency\is{frequency}, the agents tend to use more generalized semantic role\is{semantic role} marker\is{case!case marking}s rather than specific ones. Here, about seven semantic role\is{semantic role}s cover 25 of the 30 participant role\is{participant role}s. The top line indicates that some amount of variation\is{variation} persists over time.}
    \label{f:base3-size3d}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[b]
 \centerline{\includegraphics[width=\textwidth]{Chapter3/figs/graph-base3-effort3d}}
   \caption[Baseline experiment 3d: success, effort and coherence]{This graph shows that the agents reach communicative success\is{communicative success}, reduce the cognitive effort\is{cognitive effort} needed for interpretation and converge on a shared set of case marker\is{case!case marking}s.}
    \label{f:base3-effort3d}
 \end{figure}
 
-\subsubsection{Results}
  The final set-up in baseline experiment 3 does not use confidence\is{confidence} scores or lateral inhibition\is{lateral inhibition}. Instead, agents rely on token frequency\is{token frequency}\is{frequency} of successful interactions for producing utterances. \figref{f:base3-size3d} shows that the agents spend roughly the same time as in set-up 3c innovat\is{innovation}ing and learning new marker\is{case!case marking}s. The average amount of variation\is{variation} reaches a total of 35--40 possibilities for 30 marker\is{case!case marking}s, which is an average of less than two variation\is{variation}s for each participant role\is{participant role}. The innovat\is{innovation}ion rate is in fact as high as in the previous set-up, but many innovat\is{innovation}ions are excluded very early on by memory decay\is{memory decay}. Innovations that do survive the memory decay\is{memory decay} during the first 2.000 interactions are quite frequent so they persist in memory for a very long time afterwards. Getting rid of them is therefore very slow and may take thousands of additional language game\is{language game}s before they are ``forgotten'' or in some cases they persist over time. A closer look at the marker\is{case!case marking}s themselves learns us that there are on average eight semantic role\is{semantic role}s and six marker\is{case!case marking}s for specific participant role\is{participant role}s. This means that the semantic role\is{semantic role} marker\is{case!case marking}s can cover up to 24 participant role\is{participant role}s.
 
+\largerpage
 \figref{f:base3-effort3d} indicates that even though the agents do not reduce their grammars to a single variation\is{variation} for all 30 participants, they nevertheless converge on a shared set of preferred markings: coherence rises to 100\% in 6.000 language game\is{language game}s. Communicative success\is{communicative success} reaches 100\% and the agents rapidly succeed in reducing the cognitive effort\is{cognitive effort} needed for interpretation. 
 
 
