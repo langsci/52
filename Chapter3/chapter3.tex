@@ -879,7 +879,6 @@ I will from now on refer to `walk-to-2' as the {\em target role} and to `jill' a
 
 \ea
 \begin{lstlisting}
- 
 (move-inside event-163190 true) 
 (move-inside-1 event-163190 jill)
 (move-inside-2 event-163190 house-1)
@@ -887,7 +886,7 @@ I will from now on refer to `walk-to-2' as the {\em target role} and to `jill' a
 \z
 
 \subsubsection{Elaborate the mapping between the two}
- In order to elaborate the mapping between the two events, the complete event structure\is{event structure} is taken. The target event (walk-to) consists of four micro-events: one participant is moving and approaching another participant, which stands still until the two participants touch each other:
+ In order to elaborate the mapping between the two events, the complete event structure\is{event structure} is taken. The target event (walk-to) consists of four micro-events: one participant is moving and approaching another participant, which stands still until the two participants touch each other:\\
 
 \begin{itemize}
  \item
@@ -912,7 +911,7 @@ I will from now on refer to `walk-to-2' as the {\em target role} and to `jill' a
 
  
 
-The source event (move-inside) is made up of eight micro-events. The event starts with two visible participants, of which one is standing still. The distance between both objects becomes smaller as one participant moves to the other. This continues until they ``touch'' each other after which the moving participant disappears out of sight.
+The source event (move-inside) is made up of eight micro-events. The event starts with two visible participants, of which one is standing still. The distance between both objects becomes smaller as one participant moves to the other. This continues until they ``touch'' each other after which the moving participant disappears out of sight.\\
 
 \begin{itemize}
 \item \begin{lstlisting}
@@ -955,17 +954,16 @@ The source event (move-inside) is made up of eight micro-events. The event start
 \end{lstlisting}
 \end{itemize} 
 
-Analog\is{analogy}y is commonly defined as a mapping from a source domain to a new target domain. The next step in the algorithm is therefore to check how the existing role maps onto the target event structure\is{event structure}. This can be achieved by selecting all the micro-events of the source event that involve the source filler and map them onto the corresponding micro-events of the target. If the micro-events do not exist in the target event, they are ignored. Other information such as time-stamps and hierarchical structure is also ignored. This yields mapping in \figref{fig:3:mapping}.
+Analog\is{analogy}y is commonly defined as a mapping from a source domain to a new target domain. The next step in the algorithm is therefore to check how the existing role maps onto the target event structure\is{event structure}. This can be achieved by selecting all the micro-events of the source event that involve the source filler and map them onto the corresponding micro-events of the target. If the micro-events do not exist in the target event, they are ignored. Other information such as time-stamps and hierarchical structure is also ignored. This yields the mapping in \figref{fig:3:mapping}.
 
 \begin{figure}[h]
-\footnotesize
  \begin{tabular}{lll} 
 {\bfseries source event} & {\bfseries ==>} & {\bfseries target event} \\
 \midrule
 (touch-1 event-162493 jill) &  ==> & (touch-1 event-165633 jill)\\
 (touch-1 event-161801 jill) & ==> &  (touch-1 event-165633 jill)\\
 \end{tabular} 
-\caption{Please provide a caption}
+\caption{Mapping source event and target event}
 \label{fig:3:mapping}
 \end{figure}
 
@@ -995,7 +993,7 @@ The changes to the inventory are schematized in \figref{f:generalise} and can be
 \subsubsection{Learning}
  The hearer learns the marker\is{case!case marking} by following the same strategy as before. If he didn't know the marker\is{case!case marking} yet, he will create a new verb\is{verb}-specific construction\is{construction!verb-specific construction} if the context is clear enough. If he already knew the marker\is{case!case marking}, he will get into trouble during parsing because its present use does not correspond to its previous function. The hearer will ignore the problem for the time being and parse the utterance as good as possible. Using the parsed meaning, inferred variable equal\is{variable equality}ities and re-entrance\is{re-entrance}, the agent can then (possibly) retrieve the analog\is{analogy}y introduced by the speaker. If the hearer cannot retrieve any analog\is{analogy}y, he will nevertheless accept it as imposed by the speaker.
 
-The agents in this experiment can thus be characterized as (incremental) instan-ce-based\is{exemplar-based models} learners (and innovat\is{innovation}ors) \citep[Chapter 8]{mitchell97machine}: the agents are ``lazy'' learner\is{lazy learner}s in the sense that they postpone generalization until new instances have to be classified as opposed to ``eager'' learner\is{eager learner}s that try to make abstraction\is{abstraction}s over the data immediately. Each innovat\is{innovation}ion or novel classification is not based on abstract rules but by examining its relation to previously stored instances.  This kind of learning (and innovat\is{innovation}ion) fits usage-based model\is{usage-based model}s of language which presuppose {\em ``a bottom-up, maximalist, redundant approach in which patterns (schemas, generalizations) and instantiations are supposed to coexist, and the former are acquired from the latter''} \citep[20]{daelemans05memory}.
+The agents in this experiment can thus be characterized as (incremental) instan-ce-based\is{exemplar-based models} learners (and innovat\is{innovation}ors) \citep[Chapter 8]{mitchell97machine}: the agents are ``lazy'' learner\is{lazy learner}s in the sense that they postpone generalization until new instances have to be classified as opposed to ``eager'' learner\is{eager learner}s that try to make abstraction\is{abstraction}s over the data immediately. Each innovat\is{innovation}ion or novel classification is not based on abstract rules but by examining its relation to previously stored instances.  This kind of learning (and innovat\is{innovation}ion) fits usage-based model\is{usage-based model}s of language which presuppose  ``a bottom-up, maximalist, redundant approach in which patterns (schemas, generalizations) and instantiations are supposed to coexist, and the former are acquired from the latter'' \citep[20]{daelemans05memory}.
 
 
 \subsubsection{Consolidation}
