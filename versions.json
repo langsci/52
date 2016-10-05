@@ -1,7 +1,7 @@
 {
   "versions": [{
-    "versiontype": "main",
-    "title": "Published version of Evolution of case grammar",
+    "versiontype": "first_edition",
+    "title": "The evolution of case grammar",
     "authors": [{"name": "Remi van Trijp"}],
     "publishedAt": "2016-06-27T00:00:33.000Z"
   }]
